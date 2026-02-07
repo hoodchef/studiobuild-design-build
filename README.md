@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StudioBuild Design + Build Website
 
-## Getting Started
+Production-ready Next.js website for StudioBuild, including full brand copy, service pages, process pages, portfolio structure, lead generation flow, social content resources, and Lower Mainland local SEO infrastructure.
 
-First, run the development server:
+## Stack
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build + Validate
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Environment Setup
+Copy `.env.example` to `.env.local` and fill values:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cp .env.example .env.local
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Analytics
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+- Enables Google Analytics 4 pageview and conversion event tracking.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Inquiry Delivery (Optional, can use one or multiple)
+- `RESEND_API_KEY`, `INQUIRY_FROM_EMAIL`, `INQUIRY_TO_EMAIL`
+- `HUBSPOT_ACCESS_TOKEN`
+- `INQUIRY_WEBHOOK_URL`
 
-## Deploy on Vercel
+Inquiry submissions are sent to any configured channels in parallel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Conversion Tracking Implemented
+- Header/nav clicks
+- CTA band button clicks
+- Contact form submit attempts
+- Successful lead submissions (`generate_lead`)
+- Pageview tracking via route changes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Lead Form Hardening
+- Honeypot bot field
+- Required field validation
+- Email format validation
+- Per-IP rate limiting
+
+## Key Routes
+- `/` Home
+- `/about`
+- `/services`
+- `/services/custom-decks`
+- `/services/renovations`
+- `/services/custom-homes`
+- `/services/design-build`
+- `/services/project-management-permits`
+- `/process`
+- `/portfolio`
+- `/testimonials`
+- `/faq`
+- `/contact`
+- `/areas` + municipality pages
+
+## Deliverables File
+Full strategy/copy system is stored at:
+- `deliverables/studiobuild-complete-deliverables.md`
+
+## Production Notes
+- Security headers are configured in `next.config.ts`
+- `sitemap.xml` and `robots.txt` are generated from App Router metadata routes
+- Organization schema is injected in `src/app/layout.tsx`

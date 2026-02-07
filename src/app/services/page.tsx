@@ -1,0 +1,84 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+import { CtaBand } from "@/components/ui/cta-band";
+import { ContentSection } from "@/components/ui/content-section";
+import { KeywordList } from "@/components/ui/keyword-list";
+import { PageHero } from "@/components/ui/page-hero";
+import { serviceLinks } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Integrated construction services for decks, renovations, custom homes, design + build, and project management with permits.",
+  keywords: [
+    "construction services Lower Mainland",
+    "design build services Vancouver",
+    "renovation and custom home contractor BC",
+  ],
+};
+
+const serviceKeywords = [
+  "construction services Lower Mainland",
+  "design build services Vancouver",
+  "renovation and custom home contractor BC",
+];
+
+export default function ServicesPage() {
+  return (
+    <>
+      <PageHero
+        kicker="Services"
+        title="Design-Led Construction Services"
+        subtitle="End-to-end support for homeowners and property owners who want clarity, quality, and control from first planning conversation to final handover."
+      />
+
+      <section className="border-b border-[var(--line)]">
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {serviceLinks.map((service) => (
+              <article
+                key={service.href}
+                className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7"
+              >
+                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                  {service.label}
+                </h2>
+                <p className="mt-3 text-[15px] leading-7 text-[var(--ink-soft)]">
+                  {service.summary}
+                </p>
+                <Link
+                  href={service.href}
+                  className="mt-6 inline-block font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--accent)]"
+                >
+                  View Details
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContentSection title="How to Start">
+        <p>
+          Not sure where to begin? Start with a 15-minute call. We will assess
+          your scope, timeline, and budget range, then recommend the right path.
+        </p>
+        <p>
+          Projects move best when early decisions are organized. We can guide
+          you through pre-construction requirements so design, permitting, and
+          construction stay aligned.
+        </p>
+      </ContentSection>
+
+      <CtaBand
+        title="Need help choosing the right service path?"
+        body="We can scope your project and guide you to the service model that fits best."
+        primary={{ label: "Book Consultation", href: "/contact" }}
+        secondary={{ label: "View Portfolio", href: "/portfolio" }}
+      />
+
+      <KeywordList keywords={serviceKeywords} />
+    </>
+  );
+}

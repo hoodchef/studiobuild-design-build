@@ -1,65 +1,143 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
 
-export default function Home() {
+import { CtaBand } from "@/components/ui/cta-band";
+import { KeywordList } from "@/components/ui/keyword-list";
+import { PageHero } from "@/components/ui/page-hero";
+import { processSteps, serviceAreas, serviceLinks, testimonials } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "Build With Clarity. Finish With Confidence.",
+  description:
+    "StudioBuild delivers design-led construction across the Lower Mainland with clean execution, disciplined planning, and direct accountability.",
+  keywords: [
+    "design build contractor Lower Mainland",
+    "custom home builder Vancouver",
+    "renovation contractor North Vancouver",
+    "custom deck builder Burnaby",
+    "project management permits Surrey",
+  ],
+};
+
+const homeKeywords = [
+  "design build contractor Lower Mainland",
+  "custom home builder Vancouver",
+  "renovation contractor North Vancouver",
+  "custom deck builder Burnaby",
+  "project management permits Surrey",
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <PageHero
+        kicker="StudioBuild Design + Build"
+        title="Build With Clarity. Finish With Confidence."
+        subtitle="StudioBuild delivers design-led construction across the Lower Mainland with disciplined planning, clean execution, and direct accountability from first meeting to final handover."
+      />
+
+      <section className="border-b border-[var(--line)]">
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {serviceLinks.map((service, index) => (
+              <article
+                key={service.href}
+                className={`fade-up rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6 ${index > 0 ? `delay-${Math.min(index, 3)}` : ""}`}
+              >
+                <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
+                  Service
+                </p>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                  {service.label}
+                </h2>
+                <p className="mt-3 text-[15px] leading-7 text-[var(--ink-soft)]">
+                  {service.summary}
+                </p>
+                <Link
+                  href={service.href}
+                  className="mt-6 inline-block font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--accent)]"
+                >
+                  Explore Service
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="border-b border-[var(--line)]">
+        <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-12 md:grid-cols-2 md:py-16">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
+            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
+              Founder-Led Delivery
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+              Direct accountability from Caleb Stapelmann
+            </h2>
+            <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
+              StudioBuild was founded by Caleb Stapelmann to deliver a better
+              construction experience. Projects are managed with hands-on
+              leadership, clear decision pathways, and the discipline to do the
+              work properly the first time.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
+            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
+              Process Confidence
+            </p>
+            <ul className="mt-4 space-y-4 text-[15px] leading-7 text-[var(--ink-soft)]">
+              {processSteps.map((step) => (
+                <li key={step.title}>
+                  <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink)]">
+                    {step.title}
+                  </p>
+                  <p className="mt-1">{step.body}</p>
+                </li>
+              ))}
+            </ul>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="border-b border-[var(--line)]">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-2 md:py-16">
+          <article>
+            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
+              Service Area
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+              Serving homeowners across the Lower Mainland
+            </h2>
+            <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
+              We work in {serviceAreas.join(", ")}. We keep project standards
+              consistent regardless of municipality, with early permit planning
+              and realistic scheduling tied to local requirements.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
+            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
+              Client Feedback
+            </p>
+            {testimonials.map((testimonial) => (
+              <blockquote key={testimonial.author} className="mt-4 text-[15px] leading-7 text-[var(--ink-soft)]">
+                &ldquo;{testimonial.quote}&rdquo;
+                <footer className="mt-2 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.14em] text-[var(--ink)]">
+                  {testimonial.author}
+                </footer>
+              </blockquote>
+            ))}
+          </article>
+        </div>
+      </section>
+
+      <CtaBand
+        title="Planning a project this year?"
+        body="Book a focused 15-minute consultation. We will review scope, budget range, and timeline fit, then recommend your next step."
+        primary={{ label: "Book Consultation", href: "/contact" }}
+        secondary={{ label: "View Portfolio", href: "/portfolio" }}
+      />
+
+      <KeywordList keywords={homeKeywords} />
+    </>
   );
 }
