@@ -152,7 +152,7 @@ export function InquiryForm() {
           >
             <option value="">Select one</option>
             <option value="Custom Decks & Outdoor Spaces">Custom Decks & Outdoor Spaces</option>
-            <option value="Renovation">Renovation</option>
+            <option value="Interior Renovation">Interior Renovation</option>
             <option value="Custom Home">Custom Home</option>
             <option value="Design + Build">Design + Build</option>
             <option value="Project Management & Permits">Project Management & Permits</option>

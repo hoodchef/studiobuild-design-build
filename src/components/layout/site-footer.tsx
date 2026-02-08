@@ -11,9 +11,9 @@ export function SiteFooter() {
             StudioBuild Design + Build
           </p>
           <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
-            Founder-led construction company serving the Lower Mainland with
-            custom decks, renovations, custom homes, and integrated design +
-            build delivery.
+            Founder-led in-house design + build company serving the Lower
+            Mainland with custom decks, interior renovations, custom homes, and
+            integrated project delivery.
           </p>
         </div>
         <div>

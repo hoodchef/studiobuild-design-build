@@ -31,10 +31,10 @@ export const serviceLinks = [
       "Outdoor spaces designed for year-round use in the Lower Mainland climate.",
   },
   {
-    label: "Renovations",
+    label: "Interior Renovations",
     href: "/services/renovations",
     summary:
-      "Major renovations with clear scope, staged sequencing, and direct oversight.",
+      "Interior renovation projects with clear scope, staged sequencing, and direct oversight.",
   },
   {
     label: "Custom Homes",
@@ -46,7 +46,7 @@ export const serviceLinks = [
     label: "Design + Build",
     href: "/services/design-build",
     summary:
-      "One accountable team for concept, planning, permitting, and execution.",
+      "In-house design + build under one accountable team from concept to completion.",
   },
   {
     label: "Project Management & Permits",

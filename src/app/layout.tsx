@@ -36,22 +36,28 @@ export const metadata: Metadata = {
     template: "%s | StudioBuild Design + Build",
   },
   description:
-    "Design-driven construction company serving the Lower Mainland with custom decks, renovations, custom homes, and project management with permitting.",
+    "In-house design + build company serving the Lower Mainland with custom decks, interior renovations, custom homes, and project management with permitting.",
   keywords: [
     "StudioBuild",
     "design build contractor Lower Mainland",
+    "in house design build Vancouver",
     "custom home builder Vancouver",
-    "renovation contractor North Vancouver",
+    "interior renovation contractor North Vancouver",
     "custom deck builder Burnaby",
   ],
   metadataBase: new URL("https://studiobuild.ca"),
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "StudioBuild Design + Build | Lower Mainland BC",
     description:
-      "Design-driven construction company serving the Lower Mainland with custom decks, renovations, custom homes, and project management with permitting.",
+      "In-house design + build company serving the Lower Mainland with custom decks, interior renovations, custom homes, and project management with permitting.",
     url: "https://studiobuild.ca",
     siteName: "StudioBuild Design + Build",
     locale: "en_CA",
@@ -61,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "StudioBuild Design + Build | Lower Mainland BC",
     description:
-      "Design-driven construction company serving the Lower Mainland with custom decks, renovations, custom homes, and project management with permitting.",
+      "In-house design + build company serving the Lower Mainland with custom decks, interior renovations, custom homes, and project management with permitting.",
   },
 };
 
@@ -86,9 +92,9 @@ const organizationSchema = {
   url: "https://studiobuild.ca",
   serviceType: [
     "Custom Decks",
-    "Renovations",
+    "Interior Renovations",
     "Custom Homes",
-    "Design + Build",
+    "In-House Design + Build",
     "Project Management & Permitting",
   ],
 };

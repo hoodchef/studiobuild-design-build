@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --surface: #f6f4ef;
-  --surface-strong: #ece9df;
-  --ink: #1f2327;
-  --ink-soft: #4e555d;
-  --line: #d6d2c7;
-  --line-strong: #b8b2a3;
-  --accent: #7b674f;
+  --surface: #060709;
+  --surface-strong: #0e1115;
+  --ink: #f8f8f5;
+  --ink-soft: #c8ced6;
+  --line: #1d232b;
+  --line-strong: #384250;
+  --accent: #a48a6a;
 }
 
 * {
@@ -20,9 +20,9 @@ body {
 
 .hero-grid {
   background:
-    radial-gradient(circle at 0% 0%, rgba(123, 103, 79, 0.16), transparent 38%),
-    radial-gradient(circle at 100% 100%, rgba(31, 35, 39, 0.12), transparent 36%),
-    linear-gradient(160deg, #f9f8f5 0%, #f2efe8 72%);
+    radial-gradient(circle at 0% 0%, rgba(164, 138, 106, 0.24), transparent 34%),
+    radial-gradient(circle at 100% 100%, rgba(69, 78, 92, 0.22), transparent 36%),
+    linear-gradient(160deg, #0b0d10 0%, #050608 76%);
 }
 
 .fade-up {
@@ -56,7 +56,7 @@ body {
 @media (max-width: 767px) {
   .hero-grid {
     background:
-      radial-gradient(circle at 100% 0%, rgba(123, 103, 79, 0.2), transparent 44%),
-      linear-gradient(180deg, #f7f5ef 0%, #f1ede5 100%);
+      radial-gradient(circle at 100% 0%, rgba(164, 138, 106, 0.28), transparent 44%),
+      linear-gradient(180deg, #0b0d10 0%, #050608 100%);
   }
 }

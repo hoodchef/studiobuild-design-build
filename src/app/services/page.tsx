@@ -10,18 +10,20 @@ import { serviceLinks } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Integrated construction services for decks, renovations, custom homes, design + build, and project management with permits.",
+    "In-house design + build services for custom decks, interior renovations, custom homes, and project management with permits.",
   keywords: [
     "construction services Lower Mainland",
+    "in house design build Vancouver",
     "design build services Vancouver",
-    "renovation and custom home contractor BC",
+    "interior renovation and custom home contractor BC",
   ],
 };
 
 const serviceKeywords = [
   "construction services Lower Mainland",
+  "in house design build Vancouver",
   "design build services Vancouver",
-  "renovation and custom home contractor BC",
+  "interior renovation and custom home contractor BC",
 ];
 
 export default function ServicesPage() {
@@ -30,7 +32,7 @@ export default function ServicesPage() {
       <PageHero
         kicker="Services"
         title="Design-Led Construction Services"
-        subtitle="End-to-end support for homeowners and property owners who want clarity, quality, and control from first planning conversation to final handover."
+        subtitle="In-house design + build support for homeowners and property owners who want clarity, quality, and control from first planning conversation to final handover."
       />
 
       <section className="border-b border-[var(--line)]">

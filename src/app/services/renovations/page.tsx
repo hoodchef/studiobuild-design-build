@@ -6,37 +6,37 @@ import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
 
 export const metadata: Metadata = {
-  title: "Renovations",
+  title: "Interior Renovations",
   description:
-    "Major home renovations delivered with structured planning, clean sites, and high-quality execution across the Lower Mainland.",
+    "Interior renovations delivered with structured planning, clean sites, and high-quality execution across the Lower Mainland.",
   keywords: [
-    "home renovation contractor Vancouver",
-    "full home renovation Burnaby",
-    "renovation company Coquitlam",
-    "design-led renovation Lower Mainland",
+    "interior renovation contractor Vancouver",
+    "full interior renovation Burnaby",
+    "interior renovation company Coquitlam",
+    "design-led interior renovation Lower Mainland",
   ],
 };
 
 const keywords = [
-  "home renovation contractor Vancouver",
-  "full home renovation Burnaby",
-  "renovation company Coquitlam",
-  "design-led renovation Lower Mainland",
+  "interior renovation contractor Vancouver",
+  "full interior renovation Burnaby",
+  "interior renovation company Coquitlam",
+  "design-led interior renovation Lower Mainland",
 ];
 
 export default function RenovationsPage() {
   return (
     <>
       <PageHero
-        kicker="Services / Renovations"
-        title="Renovations With Clear Scope and Clean Execution"
-        subtitle="Major renovations managed with planning discipline, reliable communication, and craftsmanship."
+        kicker="Services / Interior Renovations"
+        title="Interior Renovations With Clear Scope and Clean Execution"
+        subtitle="Interior renovations managed with planning discipline, reliable communication, and craftsmanship."
       />
 
-      <ContentSection title="Renovation Scope">
+      <ContentSection title="Interior Renovation Scope">
         <p>
-          We deliver kitchen renovations, main-floor reconfigurations,
-          whole-home renovations, and structural upgrades with a focus on
+          We deliver kitchen renovations, main-floor reconfigurations, interior
+          transformations, and structural upgrades with a focus on
           sequencing and quality control.
         </p>
       </ContentSection>
@@ -56,10 +56,10 @@ export default function RenovationsPage() {
       </ContentSection>
 
       <CtaBand
-        title="Renovate with confidence and control."
+        title="Plan your interior renovation with confidence and control."
         body="Book a consultation to review your goals, constraints, and ideal project timeline."
-        primary={{ label: "Plan My Renovation", href: "/contact" }}
-        secondary={{ label: "See Renovation Projects", href: "/portfolio" }}
+        primary={{ label: "Plan My Interior Renovation", href: "/contact" }}
+        secondary={{ label: "See Interior Renovation Projects", href: "/portfolio" }}
       />
 
       <KeywordList keywords={keywords} />

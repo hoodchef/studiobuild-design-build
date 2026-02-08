@@ -8,7 +8,7 @@ import { serviceAreas } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free 15-minute consultation with StudioBuild and submit your project details for fit, scope, and next-step guidance.",
+    "Book a free 15-minute consultation with StudioBuild and submit your project details for custom builds, interior renovations, and design + build guidance.",
   keywords: [
     "contact contractor Vancouver",
     "book renovation consultation Lower Mainland",
@@ -41,7 +41,8 @@ export default function ContactPage() {
               Book a free 15-minute consultation to discuss scope, budget range,
               and timeline. We will tell you clearly whether your project is a
               fit, what the next step should be, and how to avoid common
-              planning mistakes in the Lower Mainland.
+              planning mistakes in the Lower Mainland for interior renovations
+              and custom builds.
             </p>
             <p className="mt-6 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.16em] text-[var(--ink-soft)]">
               Serving {serviceAreas.join(" | ")}
