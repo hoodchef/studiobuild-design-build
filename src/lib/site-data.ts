@@ -49,6 +49,12 @@ export const serviceLinks = [
       "In-house design + build under one accountable team from concept to completion.",
   },
   {
+    label: "In-House Design & Pre-Construction",
+    href: "/services/in-house-design-pre-construction",
+    summary:
+      "Feasibility, scope planning, and pre-construction coordination to de-risk your build before site work starts.",
+  },
+  {
     label: "Project Management & Permits",
     href: "/services/project-management-permits",
     summary:

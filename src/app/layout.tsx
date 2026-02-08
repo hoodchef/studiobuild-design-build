@@ -95,6 +95,7 @@ const organizationSchema = {
     "Interior Renovations",
     "Custom Homes",
     "In-House Design + Build",
+    "In-House Design & Pre-Construction",
     "Project Management & Permitting",
   ],
 };

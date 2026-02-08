@@ -44,7 +44,7 @@ export default function HomePage() {
             <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
               In-House Design
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
               One team shaping design decisions before they become site issues.
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
@@ -57,7 +57,7 @@ export default function HomePage() {
             <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
               Custom Builds
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
               Purpose-built homes, interiors, and outdoor spaces.
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
@@ -80,7 +80,7 @@ export default function HomePage() {
                 <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
                   Service
                 </p>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold leading-tight text-[var(--ink)]">
                   {service.label}
                 </h2>
                 <p className="mt-3 text-[15px] leading-7 text-[var(--ink-soft)]">
@@ -104,7 +104,7 @@ export default function HomePage() {
             <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
               Founder-Led Delivery
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
               Direct accountability from Caleb Stapelmann
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
@@ -138,7 +138,7 @@ export default function HomePage() {
             <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
               Service Area
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
               Serving homeowners across the Lower Mainland
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">

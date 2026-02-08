@@ -12,10 +12,10 @@ export function CtaBand({ title, body, primary, secondary }: CtaBandProps) {
     <section className="border-b border-[var(--line)] bg-[var(--surface-strong)]">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between md:py-14">
         <div>
-          <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)] md:text-3xl">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold leading-tight text-[var(--ink)] md:text-4xl">
             {title}
           </h2>
-          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-[var(--ink-soft)]">
+          <p className="mt-3 max-w-2xl text-[15px] font-medium leading-7 text-[var(--ink-soft)]">
             {body}
           </p>
         </div>

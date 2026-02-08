@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/renovations",
     "/services/custom-homes",
     "/services/design-build",
+    "/services/in-house-design-pre-construction",
     "/services/project-management-permits",
     "/process",
     "/portfolio",

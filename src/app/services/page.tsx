@@ -43,7 +43,7 @@ export default function ServicesPage() {
                 key={service.href}
                 className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7"
               >
-                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                <h2 className="font-[family-name:var(--font-display)] text-3xl font-semibold leading-tight text-[var(--ink)]">
                   {service.label}
                 </h2>
                 <p className="mt-3 text-[15px] leading-7 text-[var(--ink-soft)]">
