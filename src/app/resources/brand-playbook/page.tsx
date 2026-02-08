@@ -1,4 +1,12 @@
+import { buildPageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/ui/page-hero";
+
+export const metadata = buildPageMetadata({
+  title: "Brand Playbook",
+  description: "Internal StudioBuild brand strategy and messaging reference.",
+  path: "/resources/brand-playbook",
+  noindex: true,
+});
 
 const taglines = [
   "Built With Precision. Led With Care.",

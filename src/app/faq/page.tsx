@@ -1,20 +1,21 @@
-import type { Metadata } from "next";
-
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 import { faqItems } from "@/lib/site-data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "FAQ",
   description:
     "Clear answers on scope, permits, budgets, updates, and project fit for Lower Mainland construction clients.",
+  path: "/faq",
   keywords: [
     "contractor FAQ Vancouver",
     "permit questions Lower Mainland",
     "renovation pricing BC",
   ],
-};
+});
 
 const keywords = [
   "contractor FAQ Vancouver",
@@ -22,9 +23,23 @@ const keywords = [
   "renovation pricing BC",
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export default function FaqPage() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <PageHero
         kicker="FAQ"
         title="Clear Answers Before You Build"

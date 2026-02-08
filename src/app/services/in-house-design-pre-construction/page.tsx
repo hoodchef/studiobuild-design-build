@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "In-House Design & Pre-Construction",
   description:
     "In-house design and pre-construction planning services for custom builds and interior renovations across the Lower Mainland.",
+  path: "/services/in-house-design-pre-construction",
   keywords: [
     "pre construction planning Vancouver",
     "in house design build Lower Mainland",
     "residential feasibility planning BC",
     "construction scope planning North Vancouver",
   ],
-};
+});
 
 const keywords = [
   "pre construction planning Vancouver",

@@ -21,30 +21,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/faq",
     "/contact",
     "/areas",
-    "/resources/brand-playbook",
-    "/resources/social-plan",
-    "/resources/lead-system",
   ];
 
   const now = new Date();
 
   return [
     ...routes.map((route) => {
+      const isServiceRoute = route.startsWith("/services/");
+      const isMainRoute = ["/services", "/portfolio", "/process", "/contact"].includes(route);
       const changeFrequency: "weekly" | "monthly" =
-        route === "" ? "weekly" : "monthly";
+        route === "" || isMainRoute ? "weekly" : "monthly";
 
       return {
         url: `${baseUrl}${route}`,
         lastModified: now,
         changeFrequency,
-        priority: route === "" ? 1 : 0.7,
+        priority: route === "" ? 1 : isServiceRoute ? 0.9 : isMainRoute ? 0.85 : 0.75,
       };
     }),
     ...areaData.map((area) => ({
       url: `${baseUrl}/areas/${area.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: 0.68,
+      priority: 0.8,
     })),
   ];
 }

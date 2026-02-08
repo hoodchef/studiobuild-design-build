@@ -1,20 +1,21 @@
-import type { Metadata } from "next";
-
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Portfolio",
   description:
-    "Selected StudioBuild projects across the Lower Mainland, including custom decks, renovations, and custom homes.",
+    "Selected StudioBuild projects across the Lower Mainland, including custom decks, interior renovations, and custom homes.",
+  path: "/portfolio",
   keywords: [
     "renovation portfolio Vancouver",
     "custom deck projects North Vancouver",
     "custom home projects Lower Mainland",
   ],
-};
+});
 
 const keywords = [
   "renovation portfolio Vancouver",
@@ -46,9 +47,23 @@ const featuredProjects = [
   },
 ];
 
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "StudioBuild Portfolio Projects",
+  itemListElement: featuredProjects.map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: project.title,
+    description: project.summary,
+    url: absoluteUrl("/portfolio"),
+  })),
+};
+
 export default function PortfolioPage() {
   return (
     <>
+      <JsonLd data={portfolioSchema} />
       <PageHero
         kicker="Portfolio"
         title="Selected Work Across the Lower Mainland"

@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Custom Decks",
   description:
     "Custom decks and outdoor spaces designed and built for Lower Mainland weather, durability, and clean detailing.",
+  path: "/services/custom-decks",
   keywords: [
     "custom deck builder Vancouver",
     "composite deck contractor North Vancouver",
     "outdoor living construction Burnaby",
     "covered patio builder Lower Mainland",
   ],
-};
+});
 
 const keywords = [
   "custom deck builder Vancouver",

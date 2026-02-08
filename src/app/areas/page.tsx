@@ -1,15 +1,21 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CtaBand } from "@/components/ui/cta-band";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 import { areaData } from "@/lib/area-data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Service Areas",
   description:
     "StudioBuild serves homeowners and property owners across the Lower Mainland of British Columbia.",
-};
+  path: "/areas",
+  keywords: [
+    "service area contractor Lower Mainland",
+    "Vancouver design build contractor",
+    "North Vancouver renovation contractor",
+  ],
+});
 
 export default function ServiceAreasPage() {
   return (

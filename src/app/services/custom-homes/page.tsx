@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Custom Homes",
   description:
     "Custom homes built with disciplined pre-construction, direct oversight, and precision-focused execution.",
+  path: "/services/custom-homes",
   keywords: [
     "custom home builder Vancouver",
     "luxury custom home North Vancouver",
     "design build custom homes West Vancouver",
     "new home construction Lower Mainland",
   ],
-};
+});
 
 const keywords = [
   "custom home builder Vancouver",

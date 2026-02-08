@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/ui/cta-band";
 import { PageHero } from "@/components/ui/page-hero";
 import { areaData } from "@/lib/area-data";
+import { buildPageMetadata } from "@/lib/seo";
 
 type Params = {
   city: string;
@@ -20,15 +21,16 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     return {};
   }
 
-  return {
+  return buildPageMetadata({
     title: `${area.city} Contractor`,
     description: `StudioBuild provides design-led construction services in ${area.city}, British Columbia.`,
+    path: `/areas/${area.slug}`,
     keywords: [
       `${area.city} contractor`,
       `${area.city} renovation contractor`,
       `${area.city} design build company`,
     ],
-  };
+  });
 }
 
 export default function AreaPage({ params }: { params: Params }) {

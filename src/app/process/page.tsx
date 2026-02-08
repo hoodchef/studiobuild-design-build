@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-
 import { CtaBand } from "@/components/ui/cta-band";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 import { processSteps } from "@/lib/site-data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Our Process",
   description:
     "A clear five-stage construction process that removes uncertainty and keeps quality, communication, timeline, and budget under control.",
+  path: "/process",
   keywords: [
     "construction process Lower Mainland",
     "transparent renovation process Vancouver",
     "organized job site contractor BC",
   ],
-};
+});
 
 const keywords = [
   "construction process Lower Mainland",

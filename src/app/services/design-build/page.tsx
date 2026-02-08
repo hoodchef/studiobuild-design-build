@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Design + Build",
   description:
     "One integrated team for design and construction with fewer handoffs and clearer accountability.",
+  path: "/services/design-build",
   keywords: [
     "design build firm Vancouver",
     "integrated design and construction BC",
     "design build contractor Lower Mainland",
   ],
-};
+});
 
 const keywords = [
   "design build firm Vancouver",

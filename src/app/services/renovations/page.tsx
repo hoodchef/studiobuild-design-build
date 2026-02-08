@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Interior Renovations",
   description:
     "Interior renovations delivered with structured planning, clean sites, and high-quality execution across the Lower Mainland.",
+  path: "/services/renovations",
   keywords: [
     "interior renovation contractor Vancouver",
     "full interior renovation Burnaby",
     "interior renovation company Coquitlam",
     "design-led interior renovation Lower Mainland",
   ],
-};
+});
 
 const keywords = [
   "interior renovation contractor Vancouver",

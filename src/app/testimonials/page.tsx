@@ -1,20 +1,21 @@
-import type { Metadata } from "next";
-
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { testimonials } from "@/lib/site-data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Testimonials",
   description:
     "Client feedback focused on communication, clean sites, and quality-first project delivery.",
+  path: "/testimonials",
   keywords: [
     "StudioBuild reviews",
     "trusted contractor Lower Mainland",
     "renovation testimonials Vancouver",
   ],
-};
+});
 
 const keywords = [
   "StudioBuild reviews",
@@ -22,9 +23,36 @@ const keywords = [
   "renovation testimonials Vancouver",
 ];
 
+const testimonialSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "StudioBuild Client Testimonials",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: testimonials.map((testimonial, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Review",
+        itemReviewed: {
+          "@type": "LocalBusiness",
+          name: "StudioBuild Design + Build",
+          url: absoluteUrl("/"),
+        },
+        reviewBody: testimonial.quote,
+        author: {
+          "@type": "Person",
+          name: testimonial.author,
+        },
+      },
+    })),
+  },
+};
+
 export default function TestimonialsPage() {
   return (
     <>
+      <JsonLd data={testimonialSchema} />
       <PageHero
         kicker="Testimonials"
         title="What Clients Say About Working With StudioBuild"

@@ -1,23 +1,25 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { serviceLinks } from "@/lib/site-data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Services",
   description:
     "In-house design + build services for custom decks, interior renovations, custom homes, and project management with permits.",
+  path: "/services",
   keywords: [
     "construction services Lower Mainland",
     "in house design build Vancouver",
     "design build services Vancouver",
     "interior renovation and custom home contractor BC",
   ],
-};
+});
 
 const serviceKeywords = [
   "construction services Lower Mainland",
@@ -26,9 +28,22 @@ const serviceKeywords = [
   "interior renovation and custom home contractor BC",
 ];
 
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "StudioBuild Service Categories",
+  itemListElement: serviceLinks.map((service, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: service.label,
+    url: absoluteUrl(service.href),
+  })),
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={servicesSchema} />
       <PageHero
         kicker="Services"
         title="Design-Led Construction Services"

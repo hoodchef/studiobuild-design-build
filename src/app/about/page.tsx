@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About StudioBuild",
   description:
     "Learn how founder Caleb Stapelmann leads StudioBuild with precision, structure, and accountability across the Lower Mainland.",
+  path: "/about",
   keywords: [
     "about StudioBuild Lower Mainland",
     "Caleb Stapelmann builder",
     "founder-led construction Vancouver",
     "reliable contractor West Vancouver",
   ],
-};
+});
 
 const aboutKeywords = [
   "about StudioBuild Lower Mainland",

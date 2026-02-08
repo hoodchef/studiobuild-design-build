@@ -1,6 +1,14 @@
 import Link from "next/link";
 
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Lead System",
+  description: "Internal StudioBuild lead generation system documentation.",
+  path: "/resources/lead-system",
+  noindex: true,
+});
 
 const formFields = [
   "Full name",

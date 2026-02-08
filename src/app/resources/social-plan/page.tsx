@@ -1,5 +1,13 @@
 import { PageHero } from "@/components/ui/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 import { socialHighlights } from "@/lib/site-data";
+
+export const metadata = buildPageMetadata({
+  title: "Social Plan",
+  description: "Internal StudioBuild social publishing plan and content calendar.",
+  path: "/resources/social-plan",
+  noindex: true,
+});
 
 const bioOptions = [
   "Design-led builder in the Lower Mainland. Decks, renovations, custom homes. Clean sites. Clear process.",
