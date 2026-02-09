@@ -45,28 +45,22 @@ export default function AreaPage({ params }: { params: Params }) {
       <PageHero
         kicker="Service Area"
         title={`${area.city} Construction Services`}
-        subtitle={`StudioBuild delivers custom decks, renovations, custom homes, and design + build projects in ${area.city}.`}
+        subtitle={`StudioBuild delivers custom decks, interior renovations, custom homes, and design + build projects in ${area.city}.`}
       />
 
-      <section className="border-b border-[var(--line)]">
+      <section className="section-shell border-b border-[var(--line)]">
         <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-3 md:py-16">
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              Local project context
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">{area.intro}</p>
+          <article className="panel rounded-2xl p-6 md:p-7">
+            <p className="eyebrow">Local Project Context</p>
+            <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{area.intro}</p>
           </article>
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              Permit approach
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">{area.permits}</p>
+          <article className="panel rounded-2xl p-6 md:p-7">
+            <p className="eyebrow">Permit Approach</p>
+            <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{area.permits}</p>
           </article>
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              Typical scope
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">{area.focus}</p>
+          <article className="panel rounded-2xl p-6 md:p-7">
+            <p className="eyebrow">Typical Scope</p>
+            <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{area.focus}</p>
           </article>
         </div>
       </section>

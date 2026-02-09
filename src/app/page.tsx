@@ -10,7 +10,7 @@ import { processSteps, serviceAreas, serviceLinks, testimonials } from "@/lib/si
 export const metadata = buildPageMetadata({
   title: "In-House Design. Custom Builds. Built Right.",
   description:
-    "StudioBuild delivers in-house design + custom builds across the Lower Mainland with disciplined planning, interior renovations, and direct accountability.",
+    "StudioBuild's Red Seal Certified team delivers in-house design + custom builds across the Lower Mainland, with over 35 years of service experience.",
   path: "/",
   keywords: [
     "design build contractor Lower Mainland",
@@ -43,6 +43,13 @@ const serviceListSchema = {
   })),
 };
 
+const qualityMetrics = [
+  "35+ years serving the Lower Mainland",
+  "Red Seal Certified delivery",
+  "In-house design + pre-construction",
+  "Clean, controlled job sites",
+];
+
 export default function HomePage() {
   return (
     <>
@@ -50,60 +57,80 @@ export default function HomePage() {
       <PageHero
         kicker="StudioBuild Design + Build"
         title="In-House Design. Custom Builds. Built Right."
-        subtitle="We design and build in-house for clients across the Lower Mainland, with clear planning, interior renovation expertise, and precision execution from first concept to final handover."
+        subtitle="Our Red Seal Certified team has served the Lower Mainland for over 35 years, delivering in-house design, custom builds, and interior renovations with disciplined execution."
       />
 
-      <section className="border-b border-[var(--line)]">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-2 md:py-14">
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
-            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
-              In-House Design
-            </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
-              One team shaping design decisions before they become site issues.
+      <section className="section-shell border-b border-[var(--line)]">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-[1.25fr_1fr] md:py-16">
+          <article className="panel rounded-2xl p-7 md:p-8">
+            <p className="eyebrow">In-House Design + Build</p>
+            <h2 className="headline-pop mt-4 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)] md:text-5xl">
+              One accountable team from first concept review to final handover.
             </h2>
-            <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
-              Our in-house design + build workflow keeps concept, detailing,
-              budget, and buildability aligned from day one, so projects move
-              with fewer handoffs and fewer surprises.
+            <p className="mt-4 max-w-3xl text-[15px] leading-8 text-[var(--ink-soft)]">
+              Design, feasibility, permitting strategy, budget logic, and build sequencing are managed as one system. That keeps decisions aligned and reduces expensive handoffs,
+              avoidable revisions, and schedule drift.
             </p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {qualityMetrics.map((item) => (
+                <span key={item} className="metric-chip">
+                  {item}
+                </span>
+              ))}
+            </div>
           </article>
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
-            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
-              Custom Builds
-            </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
-              Purpose-built homes, interiors, and outdoor spaces.
+
+          <article className="panel rounded-2xl p-7 md:p-8">
+            <p className="eyebrow">Custom Builds + Interiors</p>
+            <h2 className="headline-pop mt-3 font-[family-name:var(--font-display)] text-3xl font-bold leading-tight text-[var(--ink)] md:text-4xl">
+              Purpose-built homes, interior renovations, and outdoor living done to exacting standards.
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
-              We specialize in custom homes, interior renovations, and custom
-              deck projects for clients who want direct accountability and a
-              higher finish standard.
+              We take on fewer projects and run each one with direct leadership, structured communication, and strict quality control. Clients choose StudioBuild when they want fewer surprises and
+              stronger finish consistency.
             </p>
+            <Link
+              href="/process"
+              className="mt-7 inline-block rounded-full border border-[var(--line-strong)] px-5 py-2 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink)] transition hover:bg-[var(--surface-elevated)]"
+            >
+              See Our Process
+            </Link>
           </article>
         </div>
       </section>
 
-      <section className="border-b border-[var(--line)]">
+      <section className="section-shell border-b border-[var(--line)]">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <div className="mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="eyebrow">Core Services</p>
+              <h2 className="headline-pop mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)] md:text-5xl">
+                Scope-specific services for high-standard residential projects
+              </h2>
+            </div>
+            <Link
+              href="/services"
+              className="rounded-full border border-[var(--line)] px-5 py-2 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink-soft)] transition hover:border-[var(--line-strong)] hover:text-[var(--ink)]"
+            >
+              View All Services
+            </Link>
+          </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {serviceLinks.map((service, index) => (
               <article
                 key={service.href}
-                className={`fade-up rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6 ${index > 0 ? `delay-${Math.min(index, 3)}` : ""}`}
+                className={`panel fade-up rounded-2xl p-6 ${index > 0 ? `delay-${Math.min(index, 3)}` : ""}`}
               >
-                <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
-                  Service
-                </p>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold leading-tight text-[var(--ink)]">
+                <p className="eyebrow">Service 0{index + 1}</p>
+                <h3 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold leading-tight text-[var(--ink)]">
                   {service.label}
-                </h2>
+                </h3>
                 <p className="mt-3 text-[15px] leading-7 text-[var(--ink-soft)]">
                   {service.summary}
                 </p>
                 <Link
                   href={service.href}
-                  className="mt-6 inline-block font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--accent)]"
+                  className="mt-6 inline-block font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--accent-soft)]"
                 >
                   Explore Service
                 </Link>
@@ -113,75 +140,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--line)]">
-        <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-12 md:grid-cols-2 md:py-16">
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
-            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
-              Founder-Led Delivery
-            </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
-              Direct accountability from Caleb Stapelmann
+      <section className="section-shell border-b border-[var(--line)]">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-2 md:py-16">
+          <article className="panel rounded-2xl p-7 md:p-8">
+            <p className="eyebrow">Process Confidence</p>
+            <h2 className="headline-pop mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
+              Structured delivery at every stage
             </h2>
-            <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
-              StudioBuild was founded by Caleb Stapelmann to deliver a better
-              construction experience. Projects are managed with hands-on
-              leadership, clear decision pathways, and the discipline to do the
-              work properly the first time.
-            </p>
-          </article>
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
-            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
-              Process Confidence
-            </p>
-            <ul className="mt-4 space-y-4 text-[15px] leading-7 text-[var(--ink-soft)]">
-              {processSteps.map((step) => (
-                <li key={step.title}>
-                  <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink)]">
-                    {step.title}
+            <ul className="mt-5 space-y-4 text-[15px] leading-7 text-[var(--ink-soft)]">
+              {processSteps.map((step, index) => (
+                <li key={step.title} className="border-l border-[var(--line-strong)] pl-4">
+                  <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--accent-soft)]">
+                    Stage 0{index + 1} | {step.title}
                   </p>
                   <p className="mt-1">{step.body}</p>
                 </li>
               ))}
             </ul>
           </article>
+          <article className="panel rounded-2xl p-7 md:p-8">
+            <p className="eyebrow">Why Clients Choose StudioBuild</p>
+            <h2 className="headline-pop mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
+              Calm communication, clean sites, and measurable craftsmanship.
+            </h2>
+            <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
+              Every project runs with documented decisions, milestone-based updates, and daily site standards. We resolve risk early and keep work organized, so quality stays high while timeline and
+              budget remain controlled.
+            </p>
+            <div className="soft-divider mt-7" />
+            <p className="mt-6 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink-muted)]">
+              Serving {serviceAreas.join(" | ")}
+            </p>
+          </article>
         </div>
       </section>
 
-      <section className="border-b border-[var(--line)]">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-2 md:py-16">
-          <article>
-            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
-              Service Area
-            </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)]">
-              Serving homeowners across the Lower Mainland
-            </h2>
-            <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
-              We work in {serviceAreas.join(", ")}. We keep project standards
-              consistent regardless of municipality, with early permit planning
-              and realistic scheduling tied to local requirements for custom
-              builds and interior renovations.
-            </p>
-          </article>
-          <article className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7">
-            <p className="font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.18em] text-[var(--ink-soft)]">
-              Client Feedback
-            </p>
-            {testimonials.map((testimonial) => (
-              <blockquote key={testimonial.author} className="mt-4 text-[15px] leading-7 text-[var(--ink-soft)]">
-                &ldquo;{testimonial.quote}&rdquo;
-                <footer className="mt-2 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.14em] text-[var(--ink)]">
-                  {testimonial.author}
-                </footer>
-              </blockquote>
-            ))}
-          </article>
+      <section className="section-shell border-b border-[var(--line)]">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-3 md:py-16">
+          {testimonials.map((testimonial, index) => (
+            <blockquote key={testimonial.author} className="panel rounded-2xl p-6">
+              <p className="eyebrow">Client Feedback 0{index + 1}</p>
+              <p className="mt-3 text-[15px] leading-8 text-[var(--ink-soft)]">&ldquo;{testimonial.quote}&rdquo;</p>
+              <footer className="mt-4 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.14em] text-[var(--ink)]">
+                {testimonial.author}
+              </footer>
+            </blockquote>
+          ))}
         </div>
       </section>
 
       <CtaBand
         title="Planning a custom build or interior renovation this year?"
-        body="Book a focused 15-minute consultation. We will review your scope, budget range, and timeline, then map the right in-house design + build path."
+        body="Book a focused 15-minute consultation. We will review scope, budget range, and timeline, then map the right in-house design + build path for your site conditions and goals."
         primary={{ label: "Book Consultation", href: "/contact" }}
         secondary={{ label: "View Portfolio", href: "/portfolio" }}
       />

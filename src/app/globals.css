@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --surface: #060709;
-  --surface-strong: #0e1115;
+  --surface: #050608;
+  --surface-strong: #0d1116;
+  --surface-elevated: #111722;
   --ink: #f8f8f5;
-  --ink-soft: #c8ced6;
-  --line: #1d232b;
-  --line-strong: #384250;
+  --ink-soft: #c4ccd5;
+  --ink-muted: #98a3af;
+  --line: #1a212b;
+  --line-strong: #3b4757;
   --accent: #a48a6a;
+  --accent-soft: #d0bc9d;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -16,13 +20,125 @@
 
 body {
   margin: 0;
+  background:
+    radial-gradient(circle at 3% 7%, rgba(164, 138, 106, 0.09), transparent 34%),
+    radial-gradient(circle at 96% 92%, rgba(89, 103, 122, 0.13), transparent 36%),
+    linear-gradient(180deg, #07090c 0%, #040507 100%);
+  color: var(--ink);
+}
+
+::selection {
+  background: rgba(164, 138, 106, 0.36);
+  color: var(--ink);
 }
 
 .hero-grid {
   background:
-    radial-gradient(circle at 0% 0%, rgba(164, 138, 106, 0.24), transparent 34%),
-    radial-gradient(circle at 100% 100%, rgba(69, 78, 92, 0.22), transparent 36%),
-    linear-gradient(160deg, #0b0d10 0%, #050608 76%);
+    radial-gradient(circle at 0% 0%, rgba(164, 138, 106, 0.24), transparent 32%),
+    radial-gradient(circle at 100% 100%, rgba(69, 78, 92, 0.22), transparent 34%),
+    linear-gradient(160deg, #0a0c10 0%, #050608 76%);
+}
+
+.section-shell {
+  position: relative;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(164, 138, 106, 0.08) 0%,
+      rgba(164, 138, 106, 0) 32%
+    );
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(175deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 52%),
+    linear-gradient(180deg, rgba(16, 20, 28, 0.94) 0%, rgba(11, 14, 20, 0.94) 100%);
+  box-shadow: var(--shadow);
+  transition:
+    border-color 200ms ease,
+    transform 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.panel:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.4);
+}
+
+.metric-chip {
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--surface-elevated) 84%, transparent);
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.eyebrow {
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  font-weight: 600;
+}
+
+.headline-pop {
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+
+.soft-divider {
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+
+.soft-divider::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 180px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(164, 138, 106, 0.95), rgba(164, 138, 106, 0));
+}
+
+.field-label {
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.field-input {
+  margin-top: 0.5rem;
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  padding: 0.78rem 0.95rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .fade-up {

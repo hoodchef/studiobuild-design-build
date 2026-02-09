@@ -56,22 +56,20 @@ export default function TestimonialsPage() {
       <PageHero
         kicker="Testimonials"
         title="What Clients Say About Working With StudioBuild"
-        subtitle="Feedback focused on communication, quality, and disciplined execution."
+        subtitle="Feedback centered on clarity, organization, and disciplined execution."
       />
 
-      <section className="border-b border-[var(--line)]">
+      <section className="section-shell border-b border-[var(--line)]">
         <div className="mx-auto w-full max-w-5xl px-6 py-12 md:py-16">
           <div className="space-y-6">
             {testimonials.map((testimonial, index) => (
-              <blockquote
-                key={testimonial.author}
-                className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7"
-              >
-                <p className="text-lg leading-8 text-[var(--ink-soft)]">
+              <blockquote key={testimonial.author} className="panel rounded-2xl p-7 md:p-8">
+                <p className="eyebrow">Client Review 0{index + 1}</p>
+                <p className="mt-4 text-lg leading-8 text-[var(--ink-soft)]">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
-                <footer className="mt-4 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink)]">
-                  {testimonial.author} | Testimonial {index + 1}
+                <footer className="mt-5 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink)]">
+                  {testimonial.author}
                 </footer>
               </blockquote>
             ))}
@@ -81,7 +79,7 @@ export default function TestimonialsPage() {
 
       <CtaBand
         title="See how this process can work for your project."
-        body="Book a consultation and we will walk through scope, budget range, and timeline fit."
+        body="Book a consultation and we will walk through scope, budget range, and timeline fit with clear next steps."
         primary={{ label: "Book Consultation", href: "/contact" }}
         secondary={{ label: "View Portfolio", href: "/portfolio" }}
       />

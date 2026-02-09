@@ -46,18 +46,16 @@ export default function FaqPage() {
         subtitle="Direct responses to common questions about scope, timing, permits, communication, and budget management."
       />
 
-      <section className="border-b border-[var(--line)]">
+      <section className="section-shell border-b border-[var(--line)]">
         <div className="mx-auto w-full max-w-5xl px-6 py-12 md:py-16">
           <div className="space-y-5">
-            {faqItems.map((item) => (
-              <article
-                key={item.q}
-                className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-7"
-              >
-                <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+            {faqItems.map((item, index) => (
+              <article key={item.q} className="panel rounded-2xl p-7 md:p-8">
+                <p className="eyebrow">Question 0{index + 1}</p>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold leading-tight text-[var(--ink)]">
                   {item.q}
                 </h2>
-                <p className="mt-3 text-[15px] leading-8 text-[var(--ink-soft)]">
+                <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
                   {item.a}
                 </p>
               </article>
@@ -68,7 +66,7 @@ export default function FaqPage() {
 
       <CtaBand
         title="Need an answer specific to your project?"
-        body="Share your project details and we will respond with clear next steps."
+        body="Share your project details and we will respond with clear next steps for scope, timeline, and permit requirements."
         primary={{ label: "Ask a Question", href: "/contact" }}
         secondary={{ label: "Explore Services", href: "/services" }}
       />

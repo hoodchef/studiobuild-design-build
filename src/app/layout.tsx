@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "In-house design + build company serving the Lower Mainland with custom decks, interior renovations, custom homes, and project management with permitting.",
+    "Red Seal Certified in-house design + build team serving the Lower Mainland for over 35 years with custom decks, interior renovations, custom homes, and project management with permitting.",
   keywords: [
     "StudioBuild",
     "design build contractor Lower Mainland",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_NAME} | Lower Mainland BC`,
     description:
-      "In-house design + build company serving the Lower Mainland with custom decks, interior renovations, custom homes, and project management with permitting.",
+      "Red Seal Certified in-house design + build team serving the Lower Mainland for over 35 years with custom decks, interior renovations, custom homes, and project management with permitting.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_CA",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} | Lower Mainland BC`,
     description:
-      "In-house design + build company serving the Lower Mainland with custom decks, interior renovations, custom homes, and project management with permitting.",
+      "Red Seal Certified in-house design + build team serving the Lower Mainland for over 35 years with custom decks, interior renovations, custom homes, and project management with permitting.",
     images: [DEFAULT_OG_IMAGE],
   },
   robots: {

@@ -30,7 +30,7 @@ export default function CustomHomesPage() {
       <PageHero
         kicker="Services / Custom Homes"
         title="Custom Homes, Properly Planned and Built"
-        subtitle="Founder-led delivery for homeowners who want quality without chaos."
+        subtitle="Red Seal Certified delivery for homeowners who want quality without chaos."
       />
 
       <ContentSection title="Build Scope">

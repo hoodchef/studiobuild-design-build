@@ -11,7 +11,7 @@ export const metadata = buildPageMetadata({
 
 const bioOptions = [
   "Design-led builder in the Lower Mainland. Decks, renovations, custom homes. Clean sites. Clear process.",
-  "StudioBuild Design + Build. Founder-led by Caleb Stapelmann. Fewer projects, higher standard.",
+  "StudioBuild Design + Build. Red Seal Certified team. Fewer projects, higher standard.",
   "Custom decks, renovations, homes. Planned properly. Built precisely. Serving Greater Vancouver.",
   "Construction without chaos. Structured planning, quality execution, direct accountability.",
   "Lower Mainland design + build partner. Transparent process from concept to handover.",
@@ -41,7 +41,7 @@ const plan = [
   "Stories: This-or-that finish choices.",
   "Reel: Renovation sequencing explained on site plan.",
   "Carousel: How we protect occupied homes during renovation.",
-  "Stories: Quick founder check-in from Caleb.",
+  "Stories: Team check-in from site.",
   "Reel: Cabinet and trim alignment detail.",
   "Carousel: Municipality differences in permit timing.",
   "Stories: FAQ response clips.",

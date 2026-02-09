@@ -94,61 +94,69 @@ export function InquiryForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6 md:p-8">
+    <form onSubmit={onSubmit} className="panel rounded-2xl p-6 md:p-8">
+      <p className="eyebrow">Project Details</p>
+      <h3 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold leading-tight text-[var(--ink)]">
+        Tell us what you are planning
+      </h3>
+      <p className="mt-3 text-[15px] leading-7 text-[var(--ink-soft)]">
+        We review every submission before booking. The clearer your details,
+        the faster we can advise scope, sequencing, and next steps.
+      </p>
       <div className="grid gap-4 md:grid-cols-2">
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label mt-5">
           Full name
           <input
             required
             value={form.fullName}
             onChange={(event) => setField("fullName", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label mt-5">
           Email
           <input
             required
             type="email"
             value={form.email}
             onChange={(event) => setField("email", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Phone
           <input
             required
             value={form.phone}
             onChange={(event) => setField("phone", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Project address
           <input
             value={form.projectAddress}
             onChange={(event) => setField("projectAddress", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Municipality
           <input
             required
             value={form.municipality}
             onChange={(event) => setField("municipality", event.target.value)}
             placeholder="Example: North Vancouver"
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Project type
           <select
             required
             value={form.projectType}
             onChange={(event) => setField("projectType", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           >
             <option value="">Select one</option>
             <option value="Custom Decks & Outdoor Spaces">Custom Decks & Outdoor Spaces</option>
@@ -159,23 +167,23 @@ export function InquiryForm() {
             <option value="Project Management & Permits">Project Management & Permits</option>
           </select>
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Desired start window
           <input
             required
             value={form.desiredStartWindow}
             onChange={(event) => setField("desiredStartWindow", event.target.value)}
             placeholder="Example: Spring 2026"
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Budget range
           <select
             required
             value={form.budgetRange}
             onChange={(event) => setField("budgetRange", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           >
             <option value="">Select one</option>
             <option value="Under $100K">Under $100K</option>
@@ -185,12 +193,12 @@ export function InquiryForm() {
             <option value="$1M+">$1M+</option>
           </select>
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Do you already have plans?
           <select
             value={form.hasPlans}
             onChange={(event) => setField("hasPlans", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           >
             <option value="">Select one</option>
             <option value="Yes">Yes</option>
@@ -198,12 +206,12 @@ export function InquiryForm() {
             <option value="In progress">In progress</option>
           </select>
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Permit status
           <select
             value={form.permitStatus}
             onChange={(event) => setField("permitStatus", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           >
             <option value="">Select one</option>
             <option value="Not started">Not started</option>
@@ -212,33 +220,33 @@ export function InquiryForm() {
             <option value="Unsure">Unsure</option>
           </select>
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           Best consultation time
           <input
             value={form.consultationTime}
             onChange={(event) => setField("consultationTime", event.target.value)}
             placeholder="Weekday mornings, afternoons, etc."
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
-        <label className="text-sm text-[var(--ink-soft)]">
+        <label className="field-label">
           How did you hear about us?
           <input
             value={form.referralSource}
             onChange={(event) => setField("referralSource", event.target.value)}
-            className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+            className="field-input"
           />
         </label>
       </div>
 
-      <label className="mt-4 block text-sm text-[var(--ink-soft)]">
+      <label className="field-label mt-4 block">
         Project description
         <textarea
           required
           value={form.projectDescription}
           onChange={(event) => setField("projectDescription", event.target.value)}
           rows={5}
-          className="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--ink)]"
+          className="field-input min-h-36"
         />
       </label>
 
@@ -248,7 +256,7 @@ export function InquiryForm() {
         data-track-event="form_submit_attempt"
         data-track-label="contact_inquiry_form"
         data-track-location="contact_page"
-        className="mt-6 rounded-full bg-[var(--ink)] px-6 py-3 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--surface)] transition hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 rounded-full border border-[var(--accent)] bg-[color:color-mix(in_srgb,var(--accent)_18%,transparent)] px-6 py-3 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink)] transition hover:bg-[color:color-mix(in_srgb,var(--accent)_28%,transparent)] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {submitting ? "Submitting..." : "Submit Project Details"}
       </button>

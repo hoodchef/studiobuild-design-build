@@ -93,7 +93,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Caleb was hands-on from first meeting to final walkthrough. Communication was clear and issues were handled quickly.",
+      "The team was hands-on from first meeting to final walkthrough. Communication was clear and issues were handled quickly.",
     author: "Homeowner, Burnaby",
   },
   {

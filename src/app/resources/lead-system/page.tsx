@@ -29,15 +29,15 @@ const formFields = [
 const templates = [
   {
     title: "New inquiry confirmation",
-    body: "Hi [First Name], Thanks for reaching out to StudioBuild Design + Build. We have received your project details and will review them shortly. If your project is a fit, we will send available times for a 15-minute consultation and outline the next step. Regards, Caleb Stapelmann",
+    body: "Hi [First Name], Thanks for reaching out to StudioBuild Design + Build. We have received your project details and will review them shortly. If your project is a fit, we will send available times for a 15-minute consultation and outline the next step. Regards, StudioBuild Team",
   },
   {
     title: "Consultation follow-up",
-    body: "Hi [First Name], Thanks for the call today. Based on our discussion, the recommended next step is [site visit/pre-construction scoping/design kickoff]. Your current priorities are: [priority 1], [priority 2], [priority 3]. We also flagged early considerations: [permits/budget/timing/material lead times]. Reply to confirm and we will schedule the next stage. Regards, Caleb Stapelmann",
+    body: "Hi [First Name], Thanks for the call today. Based on our discussion, the recommended next step is [site visit/pre-construction scoping/design kickoff]. Your current priorities are: [priority 1], [priority 2], [priority 3]. We also flagged early considerations: [permits/budget/timing/material lead times]. Reply to confirm and we will schedule the next stage. Regards, StudioBuild Team",
   },
   {
     title: "Project acceptance / onboarding",
-    body: "Hi [First Name], We are ready to move forward with your project. Your onboarding package includes project scope summary, communication cadence, preliminary schedule, and documentation checklist. Once signed approval is received, we will confirm kickoff dates and first milestones. Regards, Caleb Stapelmann",
+    body: "Hi [First Name], We are ready to move forward with your project. Your onboarding package includes project scope summary, communication cadence, preliminary schedule, and documentation checklist. Once signed approval is received, we will confirm kickoff dates and first milestones. Regards, StudioBuild Team",
   },
 ];
 

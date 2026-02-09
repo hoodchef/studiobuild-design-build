@@ -116,7 +116,10 @@ export function buildOrganizationSchema() {
       "Richmond",
       "Langley",
     ],
-    founder: "Caleb Stapelmann",
+    slogan:
+      "Red Seal Certified design + build team serving the Lower Mainland for over 35 years.",
+    description:
+      "Red Seal Certified in-house design + build team delivering custom decks, interior renovations, custom homes, and project management with permitting across the Lower Mainland.",
     email: "hello@studiobuild.ca",
     url: SITE_URL,
     telephone: "+1-778-903-7744",

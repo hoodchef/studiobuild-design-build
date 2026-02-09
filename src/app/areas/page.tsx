@@ -26,26 +26,39 @@ export default function ServiceAreasPage() {
         subtitle="StudioBuild serves projects throughout the Lower Mainland with consistent standards for planning, communication, and execution."
       />
 
-      <section className="border-b border-[var(--line)]">
-        <div className="mx-auto grid w-full max-w-6xl gap-4 px-6 py-12 md:grid-cols-3 md:py-16">
-          {areaData.map((area) => (
-            <Link
-              key={area.slug}
-              href={`/areas/${area.slug}`}
-              className="rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-6 transition hover:border-[var(--line-strong)]"
-            >
-              <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-                {area.city}
-              </h2>
-              <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">{area.intro}</p>
-            </Link>
-          ))}
+      <section className="section-shell border-b border-[var(--line)]">
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <article className="panel rounded-2xl p-7 md:p-8">
+            <p className="eyebrow">Municipality Coverage</p>
+            <h2 className="headline-pop mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)] md:text-5xl">
+              Local permit context, one consistent build standard.
+            </h2>
+            <p className="mt-4 max-w-4xl text-[15px] leading-8 text-[var(--ink-soft)]">
+              We tailor planning to each municipality while keeping quality, communication, and site standards constant across all projects.
+            </p>
+          </article>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {areaData.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/areas/${area.slug}`}
+                className="panel rounded-2xl p-6 transition hover:border-[var(--line-strong)]"
+              >
+                <p className="eyebrow">Service Area</p>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold text-[var(--ink)]">
+                  {area.city}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">{area.intro}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       <CtaBand
         title="Planning a project in your municipality?"
-        body="Book a consultation and we will map scope, permit considerations, and next steps."
+        body="Book a consultation and we will map scope, permit considerations, and next steps based on your area."
         primary={{ label: "Book Consultation", href: "/contact" }}
         secondary={{ label: "View Services", href: "/services" }}
       />
