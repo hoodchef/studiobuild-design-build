@@ -10,12 +10,17 @@ type Params = {
   city: string;
 };
 
+type AreaPageProps = {
+  params: Promise<Params>;
+};
+
 export function generateStaticParams() {
   return areaData.map((area) => ({ city: area.slug }));
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
-  const area = areaData.find((item) => item.slug === params.city);
+export async function generateMetadata({ params }: AreaPageProps): Promise<Metadata> {
+  const { city } = await params;
+  const area = areaData.find((item) => item.slug === city);
 
   if (!area) {
     return {};
@@ -33,8 +38,9 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   });
 }
 
-export default function AreaPage({ params }: { params: Params }) {
-  const area = areaData.find((item) => item.slug === params.city);
+export default async function AreaPage({ params }: AreaPageProps) {
+  const { city } = await params;
+  const area = areaData.find((item) => item.slug === city);
 
   if (!area) {
     notFound();

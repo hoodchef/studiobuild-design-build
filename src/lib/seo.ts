@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "StudioBuild Design + Build";
 export const SITE_URL = "https://studiobuild.ca";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.svg`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const DEFAULT_LOCALE = "en_CA";
 
 export type PageMetadataInput = {
