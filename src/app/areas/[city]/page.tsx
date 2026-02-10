@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { PageHero } from "@/components/ui/page-hero";
 import { areaData } from "@/lib/area-data";
-import { buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
 type Params = {
   city: string;
@@ -27,15 +28,42 @@ export async function generateMetadata({ params }: AreaPageProps): Promise<Metad
   }
 
   return buildPageMetadata({
-    title: `${area.city} Contractor`,
-    description: `StudioBuild provides design-led construction services in ${area.city}, British Columbia.`,
+    title: area.metaTitle,
+    description: area.metaDescription,
     path: `/areas/${area.slug}`,
     keywords: [
-      `${area.city} contractor`,
-      `${area.city} renovation contractor`,
-      `${area.city} design build company`,
+      `custom home builder ${area.city}`,
+      `renovation contractor ${area.city}`,
+      `design build ${area.city}`,
+      `home renovation ${area.city}`,
+      `custom deck builder ${area.city}`,
+      `interior renovation ${area.city}`,
     ],
   });
+}
+
+function buildLocalBusinessSchema(area: (typeof areaData)[0]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "StudioBuild Design + Build",
+    description: area.metaDescription,
+    url: absoluteUrl(`/areas/${area.slug}`),
+    areaServed: {
+      "@type": "City",
+      name: area.city,
+      containedInPlace: {
+        "@type": "State",
+        name: "British Columbia",
+      },
+    },
+    serviceType: [
+      "Custom Home Building",
+      "Interior Renovations",
+      "Custom Decks",
+      "Design + Build",
+    ],
+  };
 }
 
 export default async function AreaPage({ params }: AreaPageProps) {
@@ -46,28 +74,92 @@ export default async function AreaPage({ params }: AreaPageProps) {
     notFound();
   }
 
+  const localBusinessSchema = buildLocalBusinessSchema(area);
+
   return (
     <>
+      <JsonLd data={localBusinessSchema} />
+
       <PageHero
         kicker="Service Area"
-        title={`${area.city} Construction Services`}
-        subtitle={`StudioBuild delivers custom decks, interior renovations, custom homes, and design + build projects in ${area.city}.`}
+        title={area.heroTitle}
+        subtitle={area.heroSubtitle}
       />
 
+      {/* Neighbourhoods */}
       <section className="section-shell border-b border-[var(--line)]">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-3 md:py-16">
-          <article className="panel rounded-2xl p-6 md:p-7">
-            <p className="eyebrow">Local Project Context</p>
-            <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{area.intro}</p>
-          </article>
-          <article className="panel rounded-2xl p-6 md:p-7">
-            <p className="eyebrow">Permit Approach</p>
-            <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{area.permits}</p>
-          </article>
-          <article className="panel rounded-2xl p-6 md:p-7">
-            <p className="eyebrow">Typical Scope</p>
-            <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{area.focus}</p>
-          </article>
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <p className="eyebrow">{area.city} Neighbourhoods We Serve</p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {area.neighbourhoods.map((hood) => (
+              <span key={hood} className="metric-chip">
+                {hood}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="section-shell border-b border-[var(--line)]">
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <div className="grid gap-8 md:grid-cols-2">
+            <article className="panel rounded-2xl p-6 md:p-7">
+              <p className="eyebrow">Custom Home Building</p>
+              <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">
+                {area.customHomes}
+              </p>
+            </article>
+            <article className="panel rounded-2xl p-6 md:p-7">
+              <p className="eyebrow">Interior Renovations</p>
+              <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">
+                {area.renovations}
+              </p>
+            </article>
+            <article className="panel rounded-2xl p-6 md:p-7">
+              <p className="eyebrow">Custom Decks & Outdoor Living</p>
+              <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">
+                {area.decks}
+              </p>
+            </article>
+            <article className="panel rounded-2xl p-6 md:p-7">
+              <p className="eyebrow">Permits & Approvals</p>
+              <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">
+                {area.permits}
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose */}
+      <section className="section-shell border-b border-[var(--line)]">
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <p className="eyebrow">Why {area.city} Homeowners Choose StudioBuild</p>
+              <ul className="mt-6 space-y-3">
+                {area.whyChoose.map((reason) => (
+                  <li
+                    key={reason}
+                    className="flex items-start gap-3 text-sm leading-7 text-[var(--ink-soft)]"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+                    {reason}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <article className="panel rounded-2xl p-6 md:p-7">
+              <p className="eyebrow">Typical Project Scope</p>
+              <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">
+                {area.focus}
+              </p>
+              <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">
+                {area.intro}
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 

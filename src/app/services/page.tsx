@@ -9,15 +9,16 @@ import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { serviceLinks } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
-  title: "Services",
+  title: "Custom Home Building & Renovation Services | Vancouver",
   description:
-    "In-house design + build services for custom decks, interior renovations, custom homes, and project management with permits.",
+    "Design-build services for custom homes, interior renovations, custom decks & project management. Red Seal certified. Serving Vancouver, North Vancouver, Burnaby & Lower Mainland.",
   path: "/services",
   keywords: [
-    "construction services Lower Mainland",
-    "in house design build Vancouver",
+    "construction services Vancouver",
+    "custom home builder Vancouver",
+    "renovation contractor Vancouver",
     "design build services Vancouver",
-    "interior renovation and custom home contractor BC",
+    "custom deck builder Lower Mainland",
   ],
 });
 

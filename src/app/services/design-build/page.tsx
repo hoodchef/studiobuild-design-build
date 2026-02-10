@@ -5,14 +5,16 @@ import { PageHero } from "@/components/ui/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Design + Build",
+  title: "Design Build Contractor Vancouver | In-House Design + Build",
   description:
-    "One integrated team for design and construction with fewer handoffs and clearer accountability.",
+    "One team from concept to completion. In-house design-build services for custom homes & renovations in Vancouver. Reduce handoffs, save time & money.",
   path: "/services/design-build",
   keywords: [
+    "design build contractor Vancouver",
     "design build firm Vancouver",
+    "in house design build",
     "integrated design and construction BC",
-    "design build contractor Lower Mainland",
+    "design build company Lower Mainland",
   ],
 });
 

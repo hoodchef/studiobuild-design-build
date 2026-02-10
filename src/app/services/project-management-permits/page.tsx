@@ -5,15 +5,16 @@ import { PageHero } from "@/components/ui/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Project Management & Permits",
+  title: "Construction Project Management & Permit Services Vancouver",
   description:
-    "Structured construction project management and permit coordination across Lower Mainland municipalities.",
+    "Professional coordination across municipal approvals, schedule & trade flow. Building permit help for Vancouver, Burnaby, Surrey & Lower Mainland municipalities.",
   path: "/services/project-management-permits",
   keywords: [
-    "permit management Vancouver",
-    "construction project manager Lower Mainland",
-    "residential permit help Burnaby",
-    "building permit coordination Surrey",
+    "construction project management Vancouver",
+    "building permit help Vancouver",
+    "permit coordination Lower Mainland",
+    "residential project manager BC",
+    "construction permit services",
   ],
 });
 

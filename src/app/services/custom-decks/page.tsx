@@ -5,14 +5,16 @@ import { PageHero } from "@/components/ui/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Custom Decks",
+  title: "Custom Deck Builder Vancouver | Outdoor Living",
   description:
-    "Custom decks and outdoor spaces designed and built for Lower Mainland weather, durability, and clean detailing.",
+    "Custom deck design & construction for Vancouver's climate. Cedar, composite & covered decks built by Red Seal carpenters. Serving Vancouver, North Vancouver & Lower Mainland.",
   path: "/services/custom-decks",
   keywords: [
     "custom deck builder Vancouver",
-    "composite deck contractor North Vancouver",
-    "outdoor living construction Burnaby",
+    "deck contractor Vancouver",
+    "composite deck builder North Vancouver",
+    "cedar deck contractor Burnaby",
+    "outdoor living construction",
     "covered patio builder Lower Mainland",
   ],
 });

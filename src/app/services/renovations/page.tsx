@@ -5,15 +5,17 @@ import { PageHero } from "@/components/ui/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Interior Renovations",
+  title: "Interior Renovation Contractor Vancouver | Home Renovations",
   description:
-    "Interior renovations delivered with structured planning, clean sites, and high-quality execution across the Lower Mainland.",
+    "Full-service interior renovations in Vancouver & Lower Mainland. Kitchen, bathroom & whole-home remodels with clear scope, staged sequencing & Red Seal certified trades.",
   path: "/services/renovations",
   keywords: [
     "interior renovation contractor Vancouver",
+    "home renovation Vancouver",
+    "kitchen renovation Vancouver",
+    "bathroom renovation contractor",
     "full interior renovation Burnaby",
-    "interior renovation company Coquitlam",
-    "design-led interior renovation Lower Mainland",
+    "renovation company Lower Mainland",
   ],
 });
 

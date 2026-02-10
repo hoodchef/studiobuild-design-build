@@ -5,15 +5,17 @@ import { PageHero } from "@/components/ui/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Custom Homes",
+  title: "Custom Home Builder Vancouver | Ground-Up Homes",
   description:
-    "Custom homes built with disciplined pre-construction, direct oversight, and precision-focused execution.",
+    "Build your custom home in Vancouver with Red Seal certified craftsmen. In-house design, permit coordination & disciplined project management. Serving the Lower Mainland.",
   path: "/services/custom-homes",
   keywords: [
     "custom home builder Vancouver",
-    "luxury custom home North Vancouver",
-    "design build custom homes West Vancouver",
+    "custom home builder North Vancouver",
+    "luxury custom home West Vancouver",
+    "design build custom homes",
     "new home construction Lower Mainland",
+    "custom home contractor BC",
   ],
 });
 
