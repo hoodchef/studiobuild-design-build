@@ -1,8 +1,9 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Pre-Construction Planning & Design Services Vancouver",
@@ -25,9 +26,27 @@ const keywords = [
   "construction scope planning North Vancouver",
 ];
 
+const serviceSchema = buildServiceSchema({
+  name: "In-House Design and Pre-Construction Planning Vancouver",
+  description:
+    "Feasibility, scope planning, permit readiness, and pre-construction coordination for custom builds and interior renovations.",
+  path: "/services/in-house-design-pre-construction",
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  {
+    name: "In-House Design & Pre-Construction",
+    path: "/services/in-house-design-pre-construction",
+  },
+]);
+
 export default function InHouseDesignPreConstructionPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Services / In-House Design & Pre-Construction"
         title="In-House Design and Pre-Construction Planning"

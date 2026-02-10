@@ -41,11 +41,11 @@ const bingVerification = process.env.BING_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} | Lower Mainland BC`,
+    default: `${SITE_NAME} | Custom Homes & Renovations | Vancouver`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Red Seal Certified in-house design + build team serving the Lower Mainland for over 35 years with custom decks, interior renovations, custom homes, and project management with permitting.",
+    "Red Seal Certified design-build contractor serving Vancouver and the Lower Mainland with custom homes, interior renovations, custom decks, and permit management.",
   keywords: [
     "StudioBuild",
     "design build contractor Lower Mainland",
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: `${SITE_NAME} | Lower Mainland BC`,
+    title: `${SITE_NAME} | Custom Homes & Renovations | Vancouver`,
     description:
-      "Red Seal Certified in-house design + build team serving the Lower Mainland for over 35 years with custom decks, interior renovations, custom homes, and project management with permitting.",
+      "Red Seal Certified design-build contractor serving Vancouver and the Lower Mainland with custom homes, interior renovations, custom decks, and permit management.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_CA",
@@ -86,9 +86,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Lower Mainland BC`,
+    title: `${SITE_NAME} | Custom Homes & Renovations | Vancouver`,
     description:
-      "Red Seal Certified in-house design + build team serving the Lower Mainland for over 35 years with custom decks, interior renovations, custom homes, and project management with permitting.",
+      "Red Seal Certified design-build contractor serving Vancouver and the Lower Mainland with custom homes, interior renovations, custom decks, and permit management.",
     images: [DEFAULT_OG_IMAGE],
   },
   robots: {

@@ -5,7 +5,7 @@ import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { serviceLinks } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
@@ -41,10 +41,16 @@ const servicesSchema = {
   })),
 };
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+]);
+
 export default function ServicesPage() {
   return (
     <>
       <JsonLd data={servicesSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Services"
         title="Design-Led Construction Services"

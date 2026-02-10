@@ -2,13 +2,13 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { InquiryForm } from "@/components/forms/inquiry-form";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { serviceAreas } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
-  title: "Contact",
+  title: "Contact StudioBuild | Free Consultation Vancouver",
   description:
-    "Book a free 15-minute consultation with StudioBuild and submit your project details for custom builds, interior renovations, and design + build guidance.",
+    "Book a free 15-minute consultation with StudioBuild for custom homes, interior renovations, decks, and design-build projects in Vancouver and the Lower Mainland.",
   path: "/contact",
   keywords: [
     "contact contractor Vancouver",
@@ -36,6 +36,11 @@ const contactSchema = {
   },
 };
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+]);
+
 const consultationIncludes = [
   "Project-fit assessment based on scope and budget range",
   "Early permit and municipal context check",
@@ -47,6 +52,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={contactSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Contact"
         title="Start With a Focused 15-Minute Consultation"

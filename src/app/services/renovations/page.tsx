@@ -1,8 +1,9 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Interior Renovation Contractor Vancouver | Home Renovations",
@@ -26,9 +27,24 @@ const keywords = [
   "design-led interior renovation Lower Mainland",
 ];
 
+const serviceSchema = buildServiceSchema({
+  name: "Interior Renovation Contractor Vancouver & Lower Mainland",
+  description:
+    "Interior renovation services including kitchens, structural reconfiguration, and full-home interiors with disciplined planning and quality control.",
+  path: "/services/renovations",
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Interior Renovations", path: "/services/renovations" },
+]);
+
 export default function RenovationsPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Services / Interior Renovations"
         title="Interior Renovations With Clear Scope and Clean Execution"

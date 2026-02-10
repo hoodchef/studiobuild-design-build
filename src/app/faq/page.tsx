@@ -2,13 +2,13 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { faqItems } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
-  title: "FAQ",
+  title: "Contractor FAQ | Vancouver & Lower Mainland",
   description:
-    "Clear answers on scope, permits, budgets, updates, and project fit for Lower Mainland construction clients.",
+    "Get clear answers on scope, permits, budgets, and timelines for custom homes and renovations in Vancouver and the Lower Mainland.",
   path: "/faq",
   keywords: [
     "contractor FAQ Vancouver",
@@ -36,10 +36,16 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "FAQ", path: "/faq" },
+]);
+
 export default function FaqPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="FAQ"
         title="Clear Answers Before You Build"

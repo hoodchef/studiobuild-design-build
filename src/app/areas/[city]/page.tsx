@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { PageHero } from "@/components/ui/page-hero";
 import { areaData } from "@/lib/area-data";
-import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 
 type Params = {
   city: string;
@@ -75,18 +75,22 @@ export default async function AreaPage({ params }: AreaPageProps) {
   }
 
   const localBusinessSchema = buildLocalBusinessSchema(area);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Service Areas", path: "/areas" },
+    { name: area.city, path: `/areas/${area.slug}` },
+  ]);
 
   return (
     <>
       <JsonLd data={localBusinessSchema} />
-
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Service Area"
         title={area.heroTitle}
         subtitle={area.heroSubtitle}
       />
 
-      {/* Neighbourhoods */}
       <section className="section-shell border-b border-[var(--line)]">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
           <p className="eyebrow">{area.city} Neighbourhoods We Serve</p>
@@ -100,7 +104,6 @@ export default async function AreaPage({ params }: AreaPageProps) {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="section-shell border-b border-[var(--line)]">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
           <div className="grid gap-8 md:grid-cols-2">
@@ -132,7 +135,6 @@ export default async function AreaPage({ params }: AreaPageProps) {
         </div>
       </section>
 
-      {/* Why Choose */}
       <section className="section-shell border-b border-[var(--line)]">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
           <div className="grid gap-8 md:grid-cols-2">

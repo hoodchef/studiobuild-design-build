@@ -1,8 +1,9 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Custom Home Builder Vancouver | Ground-Up Homes",
@@ -26,9 +27,24 @@ const keywords = [
   "new home construction Lower Mainland",
 ];
 
+const serviceSchema = buildServiceSchema({
+  name: "Custom Home Builder Vancouver & Lower Mainland",
+  description:
+    "Ground-up custom home construction with integrated design-build planning, permit coordination, and precision-focused site execution.",
+  path: "/services/custom-homes",
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Custom Homes", path: "/services/custom-homes" },
+]);
+
 export default function CustomHomesPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Services / Custom Homes"
         title="Custom Homes, Properly Planned and Built"

@@ -4,6 +4,17 @@ export const SITE_NAME = "StudioBuild Design + Build";
 export const SITE_URL = "https://www.studiobuild.ca";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const DEFAULT_LOCALE = "en_CA";
+export const AREA_SERVED = [
+  "Vancouver",
+  "North Vancouver",
+  "West Vancouver",
+  "Burnaby",
+  "Coquitlam",
+  "Port Moody",
+  "Surrey",
+  "Richmond",
+  "Langley",
+];
 
 export type PageMetadataInput = {
   title: string;
@@ -106,23 +117,42 @@ export function buildWebsiteSchema() {
   };
 }
 
+export type ServiceSchemaInput = {
+  name: string;
+  description: string;
+  path: string;
+};
+
+export function buildServiceSchema({
+  name,
+  description,
+  path,
+}: ServiceSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType: name,
+    areaServed: AREA_SERVED,
+    provider: {
+      "@type": "LocalBusiness",
+      name: SITE_NAME,
+      url: SITE_URL,
+      telephone: "+1-778-903-7744",
+      email: "hello@studiobuild.ca",
+    },
+    url: absoluteUrl(path),
+  };
+}
+
 export function buildOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: SITE_NAME,
     image: DEFAULT_OG_IMAGE,
-    areaServed: [
-      "Vancouver",
-      "North Vancouver",
-      "West Vancouver",
-      "Burnaby",
-      "Coquitlam",
-      "Port Moody",
-      "Surrey",
-      "Richmond",
-      "Langley",
-    ],
+    areaServed: AREA_SERVED,
     slogan:
       "Red Seal Certified design + build team serving the Lower Mainland for over 35 years.",
     description:

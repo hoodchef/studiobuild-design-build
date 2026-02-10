@@ -3,12 +3,12 @@ import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Portfolio",
+  title: "Project Portfolio | Vancouver Custom Homes & Renovations",
   description:
-    "Selected StudioBuild projects across the Lower Mainland, including custom decks, interior renovations, and custom homes.",
+    "View StudioBuild project portfolio across Vancouver and the Lower Mainland, including custom decks, interior renovations, and custom homes.",
   path: "/portfolio",
   keywords: [
     "renovation portfolio Vancouver",
@@ -63,10 +63,16 @@ const portfolioSchema = {
   })),
 };
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Portfolio", path: "/portfolio" },
+]);
+
 export default function PortfolioPage() {
   return (
     <>
       <JsonLd data={portfolioSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Portfolio"
         title="Selected Work Across the Lower Mainland"

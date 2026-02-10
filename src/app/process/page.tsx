@@ -1,13 +1,14 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { processSteps } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
-  title: "Our Process",
+  title: "Our Build Process | Vancouver Renovations & Custom Homes",
   description:
-    "A clear five-stage construction process that removes uncertainty and keeps quality, communication, timeline, and budget under control.",
+    "See StudioBuild's five-stage process for Vancouver and Lower Mainland renovations, custom homes, and design-build projects with clear budget and timeline controls.",
   path: "/process",
   keywords: [
     "construction process Lower Mainland",
@@ -41,9 +42,15 @@ const executionStandards = [
   },
 ];
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Our Process", path: "/process" },
+]);
+
 export default function ProcessPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Our Process"
         title="A Clear Process From First Meeting to Final Handover"

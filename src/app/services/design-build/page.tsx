@@ -1,8 +1,9 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Design Build Contractor Vancouver | In-House Design + Build",
@@ -24,9 +25,24 @@ const keywords = [
   "design build contractor Lower Mainland",
 ];
 
+const serviceSchema = buildServiceSchema({
+  name: "Design Build Contractor Vancouver & Lower Mainland",
+  description:
+    "Integrated design and construction services with one accountable team from concept through handover.",
+  path: "/services/design-build",
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Design + Build", path: "/services/design-build" },
+]);
+
 export default function DesignBuildPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Services / Design + Build"
         title="One Team for Design and Construction"

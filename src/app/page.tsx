@@ -172,6 +172,12 @@ export default function HomePage() {
             <p className="mt-6 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink-muted)]">
               Serving {serviceAreas.join(" | ")}
             </p>
+            <Link
+              href="/areas"
+              className="mt-5 inline-block rounded-full border border-[var(--line-strong)] px-4 py-2 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.14em] text-[var(--ink-soft)] transition hover:text-[var(--ink)]"
+            >
+              Explore Service Areas
+            </Link>
           </article>
         </div>
       </section>

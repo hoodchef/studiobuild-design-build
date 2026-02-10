@@ -1,8 +1,14 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import {
+  absoluteUrl,
+  buildBreadcrumbSchema,
+  buildPageMetadata,
+  buildServiceSchema,
+} from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Custom Deck Builder Vancouver | Outdoor Living",
@@ -26,9 +32,47 @@ const keywords = [
   "covered patio builder Lower Mainland",
 ];
 
+const serviceSchema = buildServiceSchema({
+  name: "Custom Deck Builder Vancouver & Lower Mainland",
+  description:
+    "Design and construction for custom decks, covered patios, stairs, and outdoor living spaces built for Lower Mainland conditions.",
+  path: "/services/custom-decks",
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Custom Decks", path: "/services/custom-decks" },
+]);
+
+const relatedAreaSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Custom Deck Service Areas",
+  itemListElement: [
+    "Vancouver",
+    "North Vancouver",
+    "West Vancouver",
+    "Burnaby",
+    "Coquitlam",
+    "Port Moody",
+    "Surrey",
+    "Richmond",
+    "Langley",
+  ].map((city, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: city,
+    url: absoluteUrl(`/areas/${city.toLowerCase().replace(/\s+/g, "-")}`),
+  })),
+};
+
 export default function CustomDecksPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={relatedAreaSchema} />
       <PageHero
         kicker="Services / Custom Decks"
         title="Custom Decks and Outdoor Spaces Built to Last"

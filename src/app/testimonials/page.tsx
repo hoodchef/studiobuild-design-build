@@ -2,13 +2,13 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { testimonials } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
-  title: "Testimonials",
+  title: "Client Reviews | Vancouver & Lower Mainland",
   description:
-    "Client feedback focused on communication, clean sites, and quality-first project delivery.",
+    "Read StudioBuild client reviews from Vancouver and Lower Mainland projects focused on communication, clean sites, and quality-first execution.",
   path: "/testimonials",
   keywords: [
     "StudioBuild reviews",
@@ -49,10 +49,16 @@ const testimonialSchema = {
   },
 };
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Testimonials", path: "/testimonials" },
+]);
+
 export default function TestimonialsPage() {
   return (
     <>
       <JsonLd data={testimonialSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Testimonials"
         title="What Clients Say About Working With StudioBuild"

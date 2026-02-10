@@ -1,13 +1,14 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "About StudioBuild",
+  title: "About Our Red Seal Certified Team | Lower Mainland BC",
   description:
-    "Learn how StudioBuild's Red Seal Certified team delivers structured, high-standard construction across the Lower Mainland with over 35 years of service experience.",
+    "Learn how StudioBuild's Red Seal Certified team delivers custom homes, interior renovations, and design-build projects across Vancouver and the Lower Mainland.",
   path: "/about",
   keywords: [
     "red seal certified contractor Lower Mainland",
@@ -33,9 +34,15 @@ const teamStandards = [
   "Quality checkpoints at each milestone",
 ];
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+]);
+
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="About"
         title="Built by a Red Seal Certified Team"

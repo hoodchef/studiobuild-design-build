@@ -1,14 +1,15 @@
 import Link from "next/link";
 
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { areaData } from "@/lib/area-data";
 
 export const metadata = buildPageMetadata({
-  title: "Service Areas",
+  title: "Service Areas | Vancouver, North Shore, Burnaby & More",
   description:
-    "StudioBuild serves homeowners and property owners across the Lower Mainland of British Columbia.",
+    "StudioBuild serves Vancouver, North Vancouver, West Vancouver, Burnaby, Coquitlam, Port Moody, Surrey, Richmond, and Langley.",
   path: "/areas",
   keywords: [
     "service area contractor Lower Mainland",
@@ -17,9 +18,28 @@ export const metadata = buildPageMetadata({
   ],
 });
 
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Service Areas", path: "/areas" },
+]);
+
+const areaListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "StudioBuild Service Areas",
+  itemListElement: areaData.map((area, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: area.city,
+    url: absoluteUrl(`/areas/${area.slug}`),
+  })),
+};
+
 export default function ServiceAreasPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={areaListSchema} />
       <PageHero
         kicker="Service Areas"
         title="Lower Mainland Coverage"

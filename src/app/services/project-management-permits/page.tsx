@@ -1,8 +1,9 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
 import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Construction Project Management & Permit Services Vancouver",
@@ -25,9 +26,27 @@ const keywords = [
   "building permit coordination Surrey",
 ];
 
+const serviceSchema = buildServiceSchema({
+  name: "Project Management and Permit Coordination Vancouver",
+  description:
+    "Construction project management and municipal permit support across Vancouver and the Lower Mainland.",
+  path: "/services/project-management-permits",
+});
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  {
+    name: "Project Management & Permits",
+    path: "/services/project-management-permits",
+  },
+]);
+
 export default function ProjectManagementPermitsPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         kicker="Services / Project Management & Permits"
         title="Project Management and Permit Support"
