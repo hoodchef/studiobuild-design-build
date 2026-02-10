@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 
 export const SITE_NAME = "StudioBuild Design + Build";
-export const SITE_URL = "https://studiobuild.ca";
+export const SITE_URL = "https://www.studiobuild.ca";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const DEFAULT_LOCALE = "en_CA";
 
 export type PageMetadataInput = {
   title: string;
+  absoluteTitle?: string;
   description: string;
   path: string;
   keywords?: string[];
@@ -25,6 +26,7 @@ export function absoluteUrl(path: string) {
 
 export function buildPageMetadata({
   title,
+  absoluteTitle,
   description,
   path,
   keywords,
@@ -32,16 +34,21 @@ export function buildPageMetadata({
   type = "website",
 }: PageMetadataInput): Metadata {
   const canonical = absoluteUrl(path);
+  const seoTitle = absoluteTitle ?? title;
 
   return {
-    title,
+    title: absoluteTitle
+      ? {
+          absolute: absoluteTitle,
+        }
+      : title,
     description,
     keywords,
     alternates: {
       canonical,
     },
     openGraph: {
-      title,
+      title: seoTitle,
       description,
       type,
       url: canonical,
@@ -58,7 +65,7 @@ export function buildPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: seoTitle,
       description,
       images: [DEFAULT_OG_IMAGE],
     },

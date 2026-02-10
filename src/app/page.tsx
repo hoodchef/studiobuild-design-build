@@ -8,7 +8,8 @@ import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { processSteps, serviceAreas, serviceLinks, testimonials } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
-  title: "In-House Design. Custom Builds. Built Right.",
+  title: "StudioBuild | Custom Home Builder & Renovations | Vancouver & Lower Mainland",
+  absoluteTitle: "StudioBuild | Custom Home Builder & Renovations | Vancouver & Lower Mainland",
   description:
     "StudioBuild's Red Seal Certified team delivers in-house design + custom builds across the Lower Mainland, with over 35 years of service experience.",
   path: "/",

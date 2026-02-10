@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { areaData } from "@/lib/area-data";
 
-const baseUrl = "https://studiobuild.ca";
+const baseUrl = "https://www.studiobuild.ca";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

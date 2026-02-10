@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/resources/"],
       },
     ],
-    sitemap: "https://studiobuild.ca/sitemap.xml",
-    host: "https://studiobuild.ca",
+    sitemap: "https://www.studiobuild.ca/sitemap.xml",
+    host: "https://www.studiobuild.ca",
   };
 }

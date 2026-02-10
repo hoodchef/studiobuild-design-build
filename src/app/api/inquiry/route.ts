@@ -139,7 +139,7 @@ async function sendViaHubSpot(payload: InquiryPayload) {
               phone: payload.phone,
               city: payload.municipality,
               company: "StudioBuild Website Inquiry",
-              website: "https://studiobuild.ca",
+              website: "https://www.studiobuild.ca",
             },
           },
         ],
