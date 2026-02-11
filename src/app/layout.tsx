@@ -5,6 +5,7 @@ import {
   Source_Serif_4,
   Space_Grotesk,
 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { AnalyticsScripts } from "@/components/analytics/analytics-scripts";
 import { ClickTracker } from "@/components/analytics/click-tracker";
@@ -137,6 +138,7 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
