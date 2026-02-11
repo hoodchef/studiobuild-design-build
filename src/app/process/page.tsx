@@ -8,7 +8,7 @@ import { processSteps } from "@/lib/site-data";
 export const metadata = buildPageMetadata({
   title: "Our Build Process | Vancouver Renovations & Custom Homes",
   description:
-    "See StudioBuild's five-stage process for Vancouver and Lower Mainland renovations, custom homes, and design-build projects with clear budget and timeline controls.",
+    "See StudioBuild's 5-stage process for Vancouver custom homes and renovations with clear planning, budget control, clean sites, and milestone communication.",
   path: "/process",
   keywords: [
     "construction process Lower Mainland",

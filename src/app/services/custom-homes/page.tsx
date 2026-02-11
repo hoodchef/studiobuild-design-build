@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Custom Home Builder Vancouver | Ground-Up Homes",
   description:
-    "Build your custom home in Vancouver with Red Seal certified craftsmen. In-house design, permit coordination & disciplined project management. Serving the Lower Mainland.",
+    "Custom home builder in Vancouver and the Lower Mainland with in-house design-build planning, permit coordination, and disciplined construction management.",
   path: "/services/custom-homes",
   keywords: [
     "custom home builder Vancouver",

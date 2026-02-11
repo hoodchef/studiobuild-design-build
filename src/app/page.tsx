@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
-import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
+import { blogPosts } from "@/lib/blog-data";
 import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { processSteps, serviceAreas, serviceLinks, testimonials } from "@/lib/site-data";
 
@@ -11,7 +11,7 @@ export const metadata = buildPageMetadata({
   title: "StudioBuild | Custom Home Builder & Renovations | Vancouver & Lower Mainland",
   absoluteTitle: "StudioBuild | Custom Home Builder & Renovations | Vancouver & Lower Mainland",
   description:
-    "StudioBuild's Red Seal Certified team delivers in-house design + custom builds across the Lower Mainland, with over 35 years of service experience.",
+    "StudioBuild is a Vancouver design-build contractor for custom homes, interior renovations, decks, and project management across the Lower Mainland.",
   path: "/",
   keywords: [
     "design build contractor Lower Mainland",
@@ -22,15 +22,6 @@ export const metadata = buildPageMetadata({
     "project management permits Surrey",
   ],
 });
-
-const homeKeywords = [
-  "design build contractor Lower Mainland",
-  "in house design build Vancouver",
-  "custom home builder Vancouver",
-  "interior renovation contractor North Vancouver",
-  "custom deck builder Burnaby",
-  "project management permits Surrey",
-];
 
 const serviceListSchema = {
   "@context": "https://schema.org",
@@ -196,14 +187,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section-shell border-b border-[var(--line)]">
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
+          <div className="mb-7 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="eyebrow">Planning Resources</p>
+              <h2 className="headline-pop mt-3 font-[family-name:var(--font-display)] text-4xl font-bold leading-tight text-[var(--ink)] md:text-5xl">
+                Blog articles for early-stage project decisions
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="rounded-full border border-[var(--line)] px-5 py-2 font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--ink-soft)] transition hover:border-[var(--line-strong)] hover:text-[var(--ink)]"
+            >
+              View All Articles
+            </Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {blogPosts.map((post, index) => (
+              <article key={post.slug} className="panel rounded-2xl p-6">
+                <p className="eyebrow">Guide 0{index + 1}</p>
+                <h3 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold leading-tight text-[var(--ink)]">
+                  {post.title}
+                </h3>
+                <p className="mt-4 text-[15px] leading-8 text-[var(--ink-soft)]">
+                  {post.excerpt}
+                </p>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="mt-6 inline-block font-[family-name:var(--font-label)] text-xs uppercase tracking-[0.15em] text-[var(--accent-soft)]"
+                >
+                  Read Article
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         title="Planning a custom build or interior renovation this year?"
         body="Book a focused 15-minute consultation. We will review scope, budget range, and timeline, then map the right in-house design + build path for your site conditions and goals."
         primary={{ label: "Book Consultation", href: "/contact" }}
         secondary={{ label: "View Portfolio", href: "/portfolio" }}
       />
-
-      <KeywordList keywords={homeKeywords} />
     </>
   );
 }

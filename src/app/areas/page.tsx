@@ -9,7 +9,7 @@ import { areaData } from "@/lib/area-data";
 export const metadata = buildPageMetadata({
   title: "Service Areas | Vancouver, North Shore, Burnaby & More",
   description:
-    "StudioBuild serves Vancouver, North Vancouver, West Vancouver, Burnaby, Coquitlam, Port Moody, Surrey, Richmond, and Langley.",
+    "StudioBuild provides design-build, custom home, renovation, and deck services across Vancouver, North Vancouver, Burnaby, Surrey, Richmond, and Langley.",
   path: "/areas",
   keywords: [
     "service area contractor Lower Mainland",

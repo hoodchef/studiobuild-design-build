@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Red Seal Certified design-build contractor serving Vancouver and the Lower Mainland with custom homes, interior renovations, custom decks, and permit management.",
+    "Vancouver design-build contractor for custom homes, interior renovations, decks, and project management across the Lower Mainland.",
   keywords: [
     "StudioBuild",
     "design build contractor Lower Mainland",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_NAME} | Custom Homes & Renovations | Vancouver`,
     description:
-      "Red Seal Certified design-build contractor serving Vancouver and the Lower Mainland with custom homes, interior renovations, custom decks, and permit management.",
+      "Vancouver design-build contractor for custom homes, interior renovations, decks, and project management across the Lower Mainland.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_CA",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} | Custom Homes & Renovations | Vancouver`,
     description:
-      "Red Seal Certified design-build contractor serving Vancouver and the Lower Mainland with custom homes, interior renovations, custom decks, and permit management.",
+      "Vancouver design-build contractor for custom homes, interior renovations, decks, and project management across the Lower Mainland.",
     images: [DEFAULT_OG_IMAGE],
   },
   robots: {

@@ -1,14 +1,14 @@
 import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
 import { ContentSection } from "@/components/ui/content-section";
-import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
-import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
+import { serviceAreas } from "@/lib/site-data";
 
 export const metadata = buildPageMetadata({
   title: "About Our Red Seal Certified Team | Lower Mainland BC",
   description:
-    "Learn how StudioBuild's Red Seal Certified team delivers custom homes, interior renovations, and design-build projects across Vancouver and the Lower Mainland.",
+    "Meet StudioBuild, a Red Seal certified Vancouver team delivering custom homes, interior renovations, and design-build projects across the Lower Mainland.",
   path: "/about",
   keywords: [
     "red seal certified contractor Lower Mainland",
@@ -17,13 +17,6 @@ export const metadata = buildPageMetadata({
     "design build team West Vancouver",
   ],
 });
-
-const aboutKeywords = [
-  "red seal certified contractor Lower Mainland",
-  "experienced construction team Vancouver",
-  "reliable renovation contractor North Vancouver",
-  "design build team West Vancouver",
-];
 
 const teamStandards = [
   "Red Seal Certified build leadership",
@@ -39,10 +32,28 @@ const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "About", path: "/about" },
 ]);
 
+const aboutLocalBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "StudioBuild Design + Build",
+  url: absoluteUrl("/about"),
+  telephone: "+1-778-903-7744",
+  email: "hello@studiobuild.ca",
+  areaServed: serviceAreas,
+  serviceType: [
+    "Custom Decks",
+    "Interior Renovations",
+    "Custom Homes",
+    "Design + Build",
+    "Project Management",
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={aboutLocalBusinessSchema} />
       <PageHero
         kicker="About"
         title="Built by a Red Seal Certified Team"
@@ -110,8 +121,6 @@ export default function AboutPage() {
         primary={{ label: "Meet the Team", href: "/contact" }}
         secondary={{ label: "Explore Services", href: "/services" }}
       />
-
-      <KeywordList keywords={aboutKeywords} />
     </>
   );
 }

@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Interior Renovation Contractor Vancouver | Home Renovations",
   description:
-    "Full-service interior renovations in Vancouver & Lower Mainland. Kitchen, bathroom & whole-home remodels with clear scope, staged sequencing & Red Seal certified trades.",
+    "Interior renovation contractor in Vancouver and the Lower Mainland for kitchens, bathrooms, and full-home remodels with clear scope and staged sequencing.",
   path: "/services/renovations",
   keywords: [
     "interior renovation contractor Vancouver",

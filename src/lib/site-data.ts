@@ -18,6 +18,7 @@ export const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Our Process", href: "/process" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Blog", href: "/blog" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
@@ -137,4 +138,32 @@ export const socialHighlights = [
   "FAQ",
   "Permits",
   "Before/After",
+];
+
+export const citationTargets = [
+  {
+    name: "Houzz",
+    href: "https://www.houzz.com/",
+    detail: "High-intent homeowners researching renovation and build partners.",
+  },
+  {
+    name: "HomeStars",
+    href: "https://www.homestars.com/",
+    detail: "Canada-focused directory and review platform for contractors.",
+  },
+  {
+    name: "Yelp",
+    href: "https://www.yelp.ca/",
+    detail: "Local search visibility for service-area brand discovery.",
+  },
+  {
+    name: "Better Business Bureau",
+    href: "https://www.bbb.org/",
+    detail: "Trust signal for homeowners vetting reliability and complaint history.",
+  },
+  {
+    name: "Local Chamber of Commerce",
+    href: "https://www.boardoftrade.com/",
+    detail: "Regional business citation supporting local authority signals.",
+  },
 ];

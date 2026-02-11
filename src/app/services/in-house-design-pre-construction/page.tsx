@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Pre-Construction Planning & Design Services Vancouver",
   description:
-    "Feasibility, scope planning & pre-construction coordination to de-risk your build before site work starts. In-house design services for Vancouver & Lower Mainland.",
+    "Pre-construction planning and in-house design in Vancouver and the Lower Mainland for feasibility, scope definition, budgeting, and permit readiness.",
   path: "/services/in-house-design-pre-construction",
   keywords: [
     "pre construction planning Vancouver",

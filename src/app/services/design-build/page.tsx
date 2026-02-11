@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Design Build Contractor Vancouver | In-House Design + Build",
   description:
-    "One team from concept to completion. In-house design-build services for custom homes & renovations in Vancouver. Reduce handoffs, save time & money.",
+    "Design-build contractor in Vancouver and the Lower Mainland delivering in-house design, budgeting, permitting, and construction under one accountable team.",
   path: "/services/design-build",
   keywords: [
     "design build contractor Vancouver",

@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, buildPageMetadata, buildServiceSchema } from "@/
 export const metadata = buildPageMetadata({
   title: "Construction Project Management & Permit Services Vancouver",
   description:
-    "Professional coordination across municipal approvals, schedule & trade flow. Building permit help for Vancouver, Burnaby, Surrey & Lower Mainland municipalities.",
+    "Project management and permit coordination in Vancouver and the Lower Mainland for schedule control, trade alignment, municipal approvals, and reporting.",
   path: "/services/project-management-permits",
   keywords: [
     "construction project management Vancouver",

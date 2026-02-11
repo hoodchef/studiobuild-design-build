@@ -13,7 +13,7 @@ import {
 export const metadata = buildPageMetadata({
   title: "Custom Deck Builder Vancouver | Outdoor Living",
   description:
-    "Custom deck design & construction for Vancouver's climate. Cedar, composite & covered decks built by Red Seal carpenters. Serving Vancouver, North Vancouver & Lower Mainland.",
+    "Custom deck builder in Vancouver and the Lower Mainland for cedar, composite, covered patios, and outdoor living spaces built for coastal weather.",
   path: "/services/custom-decks",
   keywords: [
     "custom deck builder Vancouver",

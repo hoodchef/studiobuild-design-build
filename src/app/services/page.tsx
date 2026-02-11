@@ -11,7 +11,7 @@ import { serviceLinks } from "@/lib/site-data";
 export const metadata = buildPageMetadata({
   title: "Custom Home Building & Renovation Services | Vancouver",
   description:
-    "Design-build services for custom homes, interior renovations, custom decks & project management. Red Seal certified. Serving Vancouver, North Vancouver, Burnaby & Lower Mainland.",
+    "Vancouver design-build services for custom homes, interior renovations, decks, pre-construction planning, and project management across the Lower Mainland.",
   path: "/services",
   keywords: [
     "construction services Vancouver",

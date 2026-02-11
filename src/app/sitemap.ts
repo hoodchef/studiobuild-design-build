@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
 import { areaData } from "@/lib/area-data";
+import { blogPosts } from "@/lib/blog-data";
+import { portfolioCaseStudies } from "@/lib/portfolio-data";
 
 const baseUrl = "https://www.studiobuild.ca";
 
@@ -17,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/project-management-permits",
     "/process",
     "/portfolio",
+    "/blog",
     "/testimonials",
     "/faq",
     "/contact",
@@ -42,6 +45,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...areaData.map((area) => ({
       url: `${baseUrl}/areas/${area.slug}`,
       lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    ...portfolioCaseStudies.map((study) => ({
+      url: `${baseUrl}/portfolio/${study.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.82,
+    })),
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

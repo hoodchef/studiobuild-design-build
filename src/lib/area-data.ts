@@ -21,7 +21,7 @@ export const areaData: ServiceArea[] = [
     city: "Vancouver",
     metaTitle: "Custom Home Builder & Renovations in Vancouver",
     metaDescription:
-      "Vancouver's trusted custom home builder & renovation contractor. Red Seal certified team with 35+ years experience. Design-build for Kitsilano, Point Grey, Dunbar & more.",
+      "Vancouver custom home builder and renovation contractor for design-build projects, interior renovations, decks, and project management across the city.",
     heroTitle: "Custom Home Builder & Renovation Contractor in Vancouver",
     heroSubtitle:
       "StudioBuild delivers custom homes, interior renovations, and design-build projects throughout Vancouver. Our Red Seal certified team has served Vancouver homeowners for over 35 years.",
@@ -67,7 +67,7 @@ export const areaData: ServiceArea[] = [
     city: "North Vancouver",
     metaTitle: "Custom Home Builder & Contractor in North Vancouver",
     metaDescription:
-      "North Vancouver custom home builder specializing in hillside construction & mountain-view properties. Red Seal certified. Serving Lynn Valley, Deep Cove, Edgemont & more.",
+      "North Vancouver custom home builder and renovation contractor for hillside builds, interior renovations, decks, and design-build project delivery.",
     heroTitle: "Custom Home Builder & Renovation Contractor in North Vancouver",
     heroSubtitle:
       "StudioBuild serves North Vancouver homeowners with custom homes, major renovations, and design-build projects tailored to the North Shore's unique terrain.",
@@ -111,7 +111,7 @@ export const areaData: ServiceArea[] = [
     city: "West Vancouver",
     metaTitle: "Luxury Custom Home Builder in West Vancouver",
     metaDescription:
-      "West Vancouver's luxury custom home builder. High-end renovations & design-build for Ambleside, Dundarave, British Properties & waterfront estates. Red Seal certified.",
+      "West Vancouver custom home builder for premium renovations, custom homes, and design-build project management with Red Seal certified execution.",
     heroTitle: "Luxury Custom Home Builder in West Vancouver",
     heroSubtitle:
       "StudioBuild delivers luxury custom homes, high-end renovations, and design-build projects in West Vancouver with premium craftsmanship and attention to detail.",
@@ -153,7 +153,7 @@ export const areaData: ServiceArea[] = [
     city: "Burnaby",
     metaTitle: "Custom Home Builder & Renovations in Burnaby BC",
     metaDescription:
-      "Burnaby custom home builder & renovation contractor. Red Seal certified team serving Burnaby Heights, Capitol Hill, Brentwood & more. Design-build expertise.",
+      "Burnaby custom home builder and renovation contractor for design-build projects, interior renovations, decks, and permit-led project management.",
     heroTitle: "Custom Home Builder & Renovation Contractor in Burnaby",
     heroSubtitle:
       "StudioBuild serves Burnaby homeowners with custom homes, interior renovations, and design-build projects with 35+ years of experience.",
@@ -196,7 +196,7 @@ export const areaData: ServiceArea[] = [
     city: "Coquitlam",
     metaTitle: "Custom Home Builder & Renovations in Coquitlam",
     metaDescription:
-      "Coquitlam custom home builder & renovation contractor. Serving Burke Mountain, Westwood Plateau, Maillardville & Coquitlam Centre. Red Seal certified team.",
+      "Coquitlam custom home builder and renovation contractor delivering design-build projects, interior renovations, and custom decks with project control.",
     heroTitle: "Custom Home Builder & Renovation Contractor in Coquitlam",
     heroSubtitle:
       "StudioBuild delivers custom homes, renovations, and design-build projects throughout Coquitlam with disciplined execution and quality craftsmanship.",
@@ -237,7 +237,7 @@ export const areaData: ServiceArea[] = [
     city: "Port Moody",
     metaTitle: "Custom Home Builder & Renovations in Port Moody",
     metaDescription:
-      "Port Moody custom home builder & renovation contractor. Serving Heritage Mountain, Glenayre, Ioco & Inlet Centre. Red Seal certified design-build team.",
+      "Port Moody custom home builder and renovation contractor delivering design-build projects, interior renovations, and custom decks across the Tri-Cities.",
     heroTitle: "Custom Home Builder & Renovation Contractor in Port Moody",
     heroSubtitle:
       "StudioBuild serves Port Moody homeowners with custom builds, renovations, and design-build projects tailored to the Tri-Cities' building environment.",
@@ -276,7 +276,7 @@ export const areaData: ServiceArea[] = [
     city: "Surrey",
     metaTitle: "Custom Home Builder & Renovations in Surrey BC",
     metaDescription:
-      "Surrey custom home builder & renovation contractor. Serving South Surrey, White Rock, Cloverdale, Fleetwood & Morgan Creek. Red Seal certified team.",
+      "Surrey custom home builder and renovation contractor for design-build delivery, interior renovations, custom decks, and project management support.",
     heroTitle: "Custom Home Builder & Renovation Contractor in Surrey",
     heroSubtitle:
       "StudioBuild delivers custom homes, major renovations, and design-build projects across Surrey—from estate properties in South Surrey to established homes in Fleetwood and Cloverdale.",
@@ -317,7 +317,7 @@ export const areaData: ServiceArea[] = [
     city: "Richmond",
     metaTitle: "Custom Home Builder & Renovations in Richmond BC",
     metaDescription:
-      "Richmond custom home builder & renovation contractor. Serving Steveston, Broadmoor, Terra Nova & Richmond Centre. Red Seal certified design-build team.",
+      "Richmond custom home builder and renovation contractor for design-build projects, interior renovations, custom decks, and disciplined site execution.",
     heroTitle: "Custom Home Builder & Renovation Contractor in Richmond",
     heroSubtitle:
       "StudioBuild serves Richmond homeowners with custom builds, renovations, and design-build projects with attention to Richmond's unique building conditions.",
@@ -358,7 +358,7 @@ export const areaData: ServiceArea[] = [
     city: "Langley",
     metaTitle: "Custom Home Builder & Renovations in Langley BC",
     metaDescription:
-      "Langley custom home builder & renovation contractor. Serving Willoughby, Walnut Grove, Fort Langley & Murrayville. Red Seal certified design-build team.",
+      "Langley custom home builder and renovation contractor for design-build projects, interior renovations, custom decks, and reliable project management.",
     heroTitle: "Custom Home Builder & Renovation Contractor in Langley",
     heroSubtitle:
       "StudioBuild delivers custom homes, renovations, and design-build projects in Langley with quality craftsmanship and disciplined project management.",

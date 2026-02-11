@@ -141,6 +141,58 @@ body {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
+.mobile-scroll-nav {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-scroll-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-scroll-item {
+  scroll-snap-align: start;
+}
+
+.mobile-scroll-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.8rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mobile-scroll-fade-left {
+  left: 0;
+  background: linear-gradient(90deg, rgba(5, 6, 8, 0.95), rgba(5, 6, 8, 0));
+}
+
+.mobile-scroll-fade-right {
+  right: 0;
+  background: linear-gradient(270deg, rgba(5, 6, 8, 0.95), rgba(5, 6, 8, 0));
+}
+
+.mobile-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.mobile-scroll-cue-arrow {
+  display: inline-block;
+  animation: slide-cue 1.2s ease-in-out infinite;
+}
+
 .fade-up {
   animation: fade-up 620ms ease-out both;
 }
@@ -166,6 +218,19 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slide-cue {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
   }
 }
 

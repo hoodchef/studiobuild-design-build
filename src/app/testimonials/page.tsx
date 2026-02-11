@@ -1,6 +1,5 @@
 import { JsonLd } from "@/components/seo/json-ld";
 import { CtaBand } from "@/components/ui/cta-band";
-import { KeywordList } from "@/components/ui/keyword-list";
 import { PageHero } from "@/components/ui/page-hero";
 import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { testimonials } from "@/lib/site-data";
@@ -8,7 +7,7 @@ import { testimonials } from "@/lib/site-data";
 export const metadata = buildPageMetadata({
   title: "Client Reviews | Vancouver & Lower Mainland",
   description:
-    "Read StudioBuild client reviews from Vancouver and Lower Mainland projects focused on communication, clean sites, and quality-first execution.",
+    "Read StudioBuild client reviews from Vancouver and the Lower Mainland covering communication, site cleanliness, schedule reliability, and craftsmanship.",
   path: "/testimonials",
   keywords: [
     "StudioBuild reviews",
@@ -17,36 +16,24 @@ export const metadata = buildPageMetadata({
   ],
 });
 
-const keywords = [
-  "StudioBuild reviews",
-  "trusted contractor Lower Mainland",
-  "renovation testimonials Vancouver",
-];
-
 const testimonialSchema = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "StudioBuild Client Testimonials",
-  mainEntity: {
-    "@type": "ItemList",
-    itemListElement: testimonials.map((testimonial, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Review",
-        itemReviewed: {
-          "@type": "LocalBusiness",
-          name: "StudioBuild Design + Build",
-          url: absoluteUrl("/"),
-        },
-        reviewBody: testimonial.quote,
-        author: {
-          "@type": "Person",
-          name: testimonial.author,
-        },
-      },
-    })),
-  },
+  "@type": "LocalBusiness",
+  name: "StudioBuild Design + Build",
+  url: absoluteUrl("/"),
+  review: testimonials.map((testimonial) => ({
+    "@type": "Review",
+    reviewBody: testimonial.quote,
+    author: {
+      "@type": "Person",
+      name: testimonial.author,
+    },
+    itemReviewed: {
+      "@type": "LocalBusiness",
+      name: "StudioBuild Design + Build",
+      url: absoluteUrl("/"),
+    },
+  })),
 };
 
 const breadcrumbSchema = buildBreadcrumbSchema([
@@ -89,8 +76,6 @@ export default function TestimonialsPage() {
         primary={{ label: "Book Consultation", href: "/contact" }}
         secondary={{ label: "View Portfolio", href: "/portfolio" }}
       />
-
-      <KeywordList keywords={keywords} />
     </>
   );
 }
